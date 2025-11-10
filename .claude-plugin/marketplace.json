@@ -1,0 +1,109 @@
+{
+  "name": "tygwan-skills",
+  "displayName": "Tygwan's Skills Marketplace",
+  "version": "1.0.0",
+  "owner": {
+    "name": "Tygwan",
+    "url": "https://github.com/tygwan"
+  },
+  "homepage": "https://github.com/tygwan/skills",
+  "description": "Claude Code skills collection for project automation and development workflows",
+  "plugins": [
+    {
+      "name": "nextjs15-init",
+      "source": "./nextjs15-init",
+      "description": "Create Next.js 15 projects with App Router, ShadCN, Zustand, and modern stack",
+      "version": "1.0.0",
+      "category": "Project Initialization",
+      "keywords": ["nextjs", "react", "typescript", "shadcn", "zustand"]
+    },
+    {
+      "name": "flutter-init",
+      "source": "./flutter-init",
+      "description": "Create Flutter projects with Clean Architecture, Riverpod 3.0, and Drift",
+      "version": "1.0.0",
+      "category": "Project Initialization",
+      "keywords": ["flutter", "clean-architecture", "riverpod", "drift"]
+    },
+    {
+      "name": "landing-page-guide",
+      "source": "./landing-page-guide",
+      "description": "Guide for creating high-converting landing pages with Next.js and ShadCN UI",
+      "version": "1.0.0",
+      "category": "UI/UX Development",
+      "keywords": ["landing-page", "nextjs", "shadcn", "seo", "conversion"]
+    },
+    {
+      "name": "codex",
+      "source": "./codex",
+      "description": "Execute OpenAI Codex CLI for code analysis, refactoring, and automated editing",
+      "version": "1.0.0",
+      "category": "AI Integration",
+      "keywords": ["codex", "openai", "code-analysis", "refactoring"]
+    },
+    {
+      "name": "codex-claude-loop",
+      "source": "./codex-claude-loop",
+      "description": "Dual-AI engineering loop with Claude and Codex for optimal code quality",
+      "version": "1.0.0",
+      "category": "AI Integration",
+      "keywords": ["codex", "claude", "code-review", "ai-collaboration"]
+    },
+    {
+      "name": "web-to-markdown",
+      "source": "./web-to-markdown",
+      "description": "Convert web pages to markdown with AI optimization and dual mode support",
+      "version": "1.0.0",
+      "category": "Documentation",
+      "keywords": ["markdown", "web-scraping", "documentation", "ai-optimization"]
+    },
+    {
+      "name": "code-changelog",
+      "source": "./code-changelog",
+      "description": "Track AI-generated code changes with automatic documentation and HTML viewer",
+      "version": "1.0.0",
+      "category": "Documentation",
+      "keywords": ["changelog", "documentation", "code-tracking", "html-viewer"]
+    },
+    {
+      "name": "prompt-enhancer",
+      "source": "./prompt-enhancer",
+      "description": "Enhance user prompts by analyzing project context and generating detailed requirements",
+      "version": "1.0.0",
+      "category": "Prompt Tools",
+      "keywords": ["prompt", "context-analysis", "requirements", "project-analysis"]
+    },
+    {
+      "name": "meta-prompt-generator",
+      "source": "./meta-prompt-generator",
+      "description": "Generate structured custom slash commands with parallel processing workflows",
+      "version": "1.0.0",
+      "category": "Prompt Tools",
+      "keywords": ["meta-prompt", "workflow", "automation", "parallel-processing"]
+    },
+    {
+      "name": "skill-creator",
+      "source": "./skill-creator",
+      "description": "Guide for creating effective Claude Code skills with validation and packaging",
+      "version": "1.0.0",
+      "category": "Development Tools",
+      "keywords": ["skill", "development", "guide", "packaging"]
+    },
+    {
+      "name": "mcp-builder",
+      "source": "./mcp-builder",
+      "description": "Create high-quality MCP servers for LLM integration with external services",
+      "version": "1.0.0",
+      "category": "Development Tools",
+      "keywords": ["mcp", "model-context-protocol", "llm", "integration"]
+    },
+    {
+      "name": "skill-manager",
+      "source": "./skill-manager",
+      "description": "Efficient management and deployment of Claude Code skills and marketplace with Git automation",
+      "version": "1.0.0",
+      "category": "Development Tools",
+      "keywords": ["marketplace", "git", "deployment", "versioning", "automation"]
+    }
+  ]
+}
