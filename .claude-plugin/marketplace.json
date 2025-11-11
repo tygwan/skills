@@ -1,7 +1,7 @@
 {
   "name": "tygwan-skills",
   "displayName": "Tygwan's Skills Marketplace",
-  "version": "1.0.0",
+  "version": "2.1.0",
   "owner": {
     "name": "Tygwan",
     "url": "https://github.com/tygwan"
@@ -10,28 +10,36 @@
   "description": "Claude Code skills collection for project automation and development workflows",
   "plugins": [
     {
-      "name": "nextjs15-init",
-      "source": "./nextjs15-init",
-      "description": "Create Next.js 15 projects with App Router, ShadCN, Zustand, and modern stack",
+      "name": "agent-testing-framework",
+      "source": "./agent-testing-framework",
+      "description": "Testing framework for AI agents with TDD, unit/integration/E2E tests, and 80%+ coverage",
       "version": "1.0.0",
-      "category": "Project Initialization",
-      "keywords": ["nextjs", "react", "typescript", "shadcn", "zustand"]
+      "category": "Testing & Quality",
+      "keywords": ["testing", "tdd", "pytest", "playwright", "chaos-engineering"]
     },
     {
-      "name": "flutter-init",
-      "source": "./flutter-init",
-      "description": "Create Flutter projects with Clean Architecture, Riverpod 3.0, and Drift",
+      "name": "artifacts-builder",
+      "source": "./artifacts-builder",
+      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui)",
       "version": "1.0.0",
-      "category": "Project Initialization",
-      "keywords": ["flutter", "clean-architecture", "riverpod", "drift"]
+      "category": "AI Integration",
+      "keywords": ["react", "artifacts", "shadcn", "tailwind", "typescript", "vite"]
     },
     {
-      "name": "landing-page-guide",
-      "source": "./landing-page-guide",
-      "description": "Guide for creating high-converting landing pages with Next.js and ShadCN UI",
+      "name": "brand-guidelines",
+      "source": "./brand-guidelines",
+      "description": "Applies Anthropic's official brand colors and typography to any artifact that may benefit from having Anthropic's look-and-feel",
       "version": "1.0.0",
       "category": "UI/UX Development",
-      "keywords": ["landing-page", "nextjs", "shadcn", "seo", "conversion"]
+      "keywords": ["branding", "anthropic", "design", "styling", "typography", "colors"]
+    },
+    {
+      "name": "code-changelog",
+      "source": "./code-changelog",
+      "description": "Track AI-generated code changes with automatic documentation and HTML viewer",
+      "version": "1.0.0",
+      "category": "Documentation",
+      "keywords": ["changelog", "documentation", "code-tracking", "html-viewer"]
     },
     {
       "name": "codex",
@@ -50,44 +58,60 @@
       "keywords": ["codex", "claude", "code-review", "ai-collaboration"]
     },
     {
-      "name": "web-to-markdown",
-      "source": "./web-to-markdown",
-      "description": "Convert web pages to markdown with AI optimization and dual mode support",
+      "name": "consensus-engine",
+      "source": "./consensus-engine",
+      "description": "Domain-agnostic Multi-LLM consensus engine with weighted voting and confidence scoring",
       "version": "1.0.0",
-      "category": "Documentation",
-      "keywords": ["markdown", "web-scraping", "documentation", "ai-optimization"]
+      "category": "AI Core",
+      "keywords": ["consensus", "multi-llm", "voting", "confidence", "agent"]
     },
     {
-      "name": "code-changelog",
-      "source": "./code-changelog",
-      "description": "Track AI-generated code changes with automatic documentation and HTML viewer",
+      "name": "crypto-agent-architect",
+      "source": "./crypto-agent-architect",
+      "description": "ARCHITECTUREv4 5-layer crypto trading agent design with Binance integration",
       "version": "1.0.0",
-      "category": "Documentation",
-      "keywords": ["changelog", "documentation", "code-tracking", "html-viewer"]
+      "category": "Crypto Trading",
+      "keywords": ["crypto", "trading", "binance", "defi", "architecture"]
     },
     {
-      "name": "prompt-enhancer",
-      "source": "./prompt-enhancer",
-      "description": "Enhance user prompts by analyzing project context and generating detailed requirements",
+      "name": "crypto-risk-management",
+      "source": "./crypto-risk-management",
+      "description": "Crypto-specific risk management with liquidation, gas, slippage, and MEV protection",
       "version": "1.0.0",
-      "category": "Prompt Tools",
-      "keywords": ["prompt", "context-analysis", "requirements", "project-analysis"]
+      "category": "Crypto Trading",
+      "keywords": ["risk", "liquidation", "gas", "slippage", "mev"]
     },
     {
-      "name": "meta-prompt-generator",
-      "source": "./meta-prompt-generator",
-      "description": "Generate structured custom slash commands with parallel processing workflows",
+      "name": "crypto-trading-strategies",
+      "source": "./crypto-trading-strategies",
+      "description": "5 crypto trading strategies: arbitrage, market making, momentum, mean reversion, grid",
       "version": "1.0.0",
-      "category": "Prompt Tools",
-      "keywords": ["meta-prompt", "workflow", "automation", "parallel-processing"]
+      "category": "Crypto Trading",
+      "keywords": ["strategy", "arbitrage", "market-making", "momentum", "backtesting"]
     },
     {
-      "name": "skill-creator",
-      "source": "./skill-creator",
-      "description": "Guide for creating effective Claude Code skills with validation and packaging",
+      "name": "finishing-a-development-branch",
+      "source": "./finishing-a-development-branch",
+      "description": "Guides completion of development work by presenting structured options for merge, PR, or cleanup after implementation is complete and all tests pass",
       "version": "1.0.0",
       "category": "Development Tools",
-      "keywords": ["skill", "development", "guide", "packaging"]
+      "keywords": ["git", "workflow", "merge", "pull-request", "branch-management"]
+    },
+    {
+      "name": "flutter-init",
+      "source": "./flutter-init",
+      "description": "Create Flutter projects with Clean Architecture, Riverpod 3.0, and Drift",
+      "version": "1.0.0",
+      "category": "Project Initialization",
+      "keywords": ["flutter", "clean-architecture", "riverpod", "drift"]
+    },
+    {
+      "name": "landing-page-guide",
+      "source": "./landing-page-guide",
+      "description": "Guide for creating high-converting landing pages with Next.js and ShadCN UI",
+      "version": "1.0.0",
+      "category": "UI/UX Development",
+      "keywords": ["landing-page", "nextjs", "shadcn", "seo", "conversion"]
     },
     {
       "name": "mcp-builder",
@@ -98,12 +122,84 @@
       "keywords": ["mcp", "model-context-protocol", "llm", "integration"]
     },
     {
+      "name": "meta-prompt-generator",
+      "source": "./meta-prompt-generator",
+      "description": "Generate structured custom slash commands with parallel processing workflows",
+      "version": "1.0.0",
+      "category": "Prompt Tools",
+      "keywords": ["meta-prompt", "workflow", "automation", "parallel-processing"]
+    },
+    {
+      "name": "nextjs15-init",
+      "source": "./nextjs15-init",
+      "description": "Create Next.js 15 projects with App Router, ShadCN, Zustand, and modern stack",
+      "version": "1.0.0",
+      "category": "Project Initialization",
+      "keywords": ["nextjs", "react", "typescript", "shadcn", "zustand"]
+    },
+    {
+      "name": "prompt-enhancer",
+      "source": "./prompt-enhancer",
+      "description": "Enhance user prompts by analyzing project context and generating detailed requirements",
+      "version": "1.0.0",
+      "category": "Prompt Tools",
+      "keywords": ["prompt", "context-analysis", "requirements", "project-analysis"]
+    },
+    {
+      "name": "resilience-patterns",
+      "source": "./resilience-patterns",
+      "description": "Circuit Breaker, Retry Logic, DLQ, and Rate Limiting for fault-tolerant systems",
+      "version": "1.0.0",
+      "category": "Core Patterns",
+      "keywords": ["circuit-breaker", "retry", "dlq", "rate-limiting", "resilience"]
+    },
+    {
+      "name": "skill-creator",
+      "source": "./skill-creator",
+      "description": "Guide for creating effective Claude Code skills with validation and packaging",
+      "version": "1.0.0",
+      "category": "Development Tools",
+      "keywords": ["skill", "development", "guide", "packaging"]
+    },
+    {
       "name": "skill-manager",
       "source": "./skill-manager",
       "description": "Efficient management and deployment of Claude Code skills and marketplace with Git automation",
       "version": "1.0.0",
       "category": "Development Tools",
       "keywords": ["marketplace", "git", "deployment", "versioning", "automation"]
+    },
+    {
+      "name": "theme-factory",
+      "source": "./theme-factory",
+      "description": "Toolkit for styling artifacts with a theme. Includes 10 pre-set themes with colors/fonts that can be applied to slides, docs, reports, HTML landing pages, etc.",
+      "version": "1.0.0",
+      "category": "UI/UX Development",
+      "keywords": ["theme", "styling", "design", "colors", "fonts", "artifacts"]
+    },
+    {
+      "name": "using-git-worktrees",
+      "source": "./using-git-worktrees",
+      "description": "Creates isolated git worktrees with smart directory selection and safety verification for feature work that needs isolation from current workspace",
+      "version": "1.0.0",
+      "category": "Development Tools",
+      "keywords": ["git", "worktree", "workflow", "isolation", "branch-management"]
+    },
+    {
+      "name": "webapp-testing",
+      "source": "./webapp-testing",
+      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots",
+      "version": "1.0.0",
+      "category": "Development Tools",
+      "keywords": ["playwright", "testing", "e2e", "ui-testing", "automation"]
+    },
+    {
+      "name": "web-to-markdown",
+      "source": "./web-to-markdown",
+      "description": "Convert web pages to markdown with AI optimization and dual mode support",
+      "version": "1.0.0",
+      "category": "Documentation",
+      "keywords": ["markdown", "web-scraping", "documentation", "ai-optimization"]
     }
   ]
 }

@@ -35,6 +35,24 @@ Flutter 프로젝트를 Clean Architecture 기반으로 자동 생성합니다. 
 - SEO 최적화 및 접근성 표준
 - Next.js 14+ App Router 최적화
 
+#### [theme-factory](./theme-factory/)
+슬라이드, 문서, 보고서, HTML 랜딩 페이지 등 아티팩트를 테마로 스타일링하는 툴킷입니다. 10개의 사전 설정 테마 또는 즉석에서 생성한 새 테마를 적용할 수 있습니다.
+
+**주요 기능:**
+- 10개의 전문 폰트 및 컬러 테마
+- 응집력 있는 컬러 팔레트 (hex 코드 포함)
+- 헤더 및 본문 텍스트용 보완 폰트 페어링
+- 맞춤형 테마 즉석 생성
+
+#### [brand-guidelines](./brand-guidelines/)
+Anthropic의 공식 브랜드 컬러와 타이포그래피를 모든 아티팩트에 적용합니다. 브랜드 컬러, 스타일 가이드라인, 시각적 포매팅이 필요한 경우 사용합니다.
+
+**주요 기능:**
+- Anthropic 공식 브랜드 컬러 (Dark, Orange, Blue, Green)
+- 타이포그래피 시스템 (Poppins, Lora)
+- 스마트 폰트 적용 및 자동 폴백
+- 텍스트 및 도형 스타일링
+
 ### 🤖 AI 통합 도구
 
 #### [codex](./codex/)
@@ -54,6 +72,15 @@ Claude Code와 Codex가 협력하는 듀얼 AI 엔지니어링 루프를 구현�
 - Codex: 검증 및 코드 리뷰
 - 지속적인 상호 리뷰
 - 컨텍스트 핸드오프
+
+#### [artifacts-builder](./artifacts-builder/)
+React, Tailwind CSS, shadcn/ui를 사용하여 정교한 멀티 컴포넌트 claude.ai HTML 아티팩트를 생성합니다. 상태 관리, 라우팅, shadcn/ui 컴포넌트가 필요한 복잡한 아티팩트에 사용됩니다.
+
+**주요 기능:**
+- React 18 + TypeScript + Vite + Parcel
+- Tailwind CSS + 40+ shadcn/ui 컴포넌트 사전 설치
+- 단일 HTML 파일로 번들링
+- Path alias 설정 (@/)
 
 ### 📝 문서화 및 변환
 
@@ -108,6 +135,16 @@ AI가 생성한 모든 코드 변경사항을 reviews 폴더에 기록하고, �
 - 스크립트, 레퍼런스, 에셋 관리
 - 자동 검증 및 패키징
 
+#### [skill-manager](./skill-manager/)
+Claude Code 스킬과 마켓플레이스를 효율적으로 관리하고 배포합니다. 마켓플레이스 초기화, 스킬 업데이트, Git 워크플로우, 버전 관리, 릴리스 노트를 자동화합니다.
+
+**주요 기능:**
+- 마켓플레이스 초기화 및 관리
+- 스킬 추가 및 메타데이터 업데이트
+- Semantic versioning 자동화
+- Conventional commits 및 Git 태그
+- Changelog 자동 생성
+
 #### [mcp-builder](./mcp-builder/)
 고품질 MCP (Model Context Protocol) 서버를 생성하기 위한 가이드입니다. LLM이 외부 서비스와 효과적으로 상호작용할 수 있는 도구를 제공합니다.
 
@@ -116,6 +153,33 @@ AI가 생성한 모든 코드 변경사항을 reviews 폴더에 기록하고, �
 - Agent-Centric Design 원칙
 - 단계별 구현 프로세스
 - 평가 프레임워크
+
+#### [using-git-worktrees](./using-git-worktrees/)
+Git worktree를 사용하여 격리된 작업 환경을 생성합니다. 현재 작업 공간에서 분리가 필요한 기능 작업이나 구현 계획 실행 전에 사용합니다.
+
+**주요 기능:**
+- 체계적인 디렉토리 선택 프로세스
+- 안전성 검증 (.gitignore 확인)
+- 프로젝트 자동 설정 (npm/cargo/pip)
+- 기준 테스트 검증
+
+#### [finishing-a-development-branch](./finishing-a-development-branch/)
+구현 완료 후 작업을 통합하는 방법을 안내합니다. 모든 테스트가 통과한 후 merge, PR, 또는 정리를 위한 구조화된 옵션을 제시합니다.
+
+**주요 기능:**
+- 테스트 검증 → 옵션 제시 → 선택 실행 → 정리
+- 로컬 merge 또는 PR 생성
+- Worktree 자동 정리
+- 안전한 작업 삭제 (확인 필요)
+
+#### [webapp-testing](./webapp-testing/)
+Playwright를 사용하여 로컬 웹 애플리케이션을 상호작용하고 테스트합니다. 프론트엔드 기능 검증, UI 동작 디버깅, 브라우저 스크린샷 캡처, 브라우저 로그 확인을 지원합니다.
+
+**주요 기능:**
+- Python Playwright 스크립트 작성
+- 서버 라이프사이클 관리 (다중 서버 지원)
+- Reconnaissance-then-action 패턴
+- DOM 검사 및 셀렉터 발견
 
 ## 🚀 사용 방법
 
