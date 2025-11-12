@@ -37,3 +37,34 @@ build/
 
 # Requirements documents
 *-requirements.md
+
+# Security & Secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.cer
+*.crt
+secrets/
+credentials/
+*.credentials
+*.secret
+config/secrets.*
+api-keys.*
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+
+# Certificates
+*.csr
+*.der
+
+# Backup files
+*.backup
+*~
