@@ -1,12 +1,10 @@
 {
   "name": "finishing-a-development-branch",
-  "displayName": "Finishing a Development Branch",
   "version": "1.0.0",
   "description": "Guides completion of development work by presenting structured options for merge, PR, or cleanup after implementation is complete and all tests pass",
   "author": {
     "name": "Tygwan",
     "url": "https://github.com/tygwan"
   },
-  "keywords": ["git", "workflow", "merge", "pull-request", "branch-management"],
-  "category": "Development Tools"
+  "keywords": ["git", "workflow", "merge", "pull-request", "branch-management"]
 }

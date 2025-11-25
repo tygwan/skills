@@ -1,12 +1,10 @@
 {
   "name": "theme-factory",
-  "displayName": "Theme Factory",
   "version": "1.0.0",
   "description": "Toolkit for styling artifacts with a theme. Includes 10 pre-set themes with colors/fonts that can be applied to slides, docs, reports, HTML landing pages, etc.",
   "author": {
     "name": "Tygwan",
     "url": "https://github.com/tygwan"
   },
-  "keywords": ["theme", "styling", "design", "colors", "fonts", "artifacts"],
-  "category": "UI/UX Development"
+  "keywords": ["theme", "styling", "design", "colors", "fonts", "artifacts"]
 }
