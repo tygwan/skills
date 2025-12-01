@@ -157,6 +157,12 @@ your-project/
 | [using-git-worktrees](#using-git-worktrees) | Git worktree 격리 작업 환경 생성 | 3 | ~2K |
 | [finishing-a-development-branch](#finishing-a-development-branch) | 개발 브랜치 통합 및 정리 | 3 | ~2K |
 
+### 배포 및 인프라
+
+| 스킬 | 설명 | 도구 | 토큰 |
+|------|------|:----:|:----:|
+| [vercel](#vercel) | Vercel MCP 설치 및 배포 자동화 (Claude Code 전용) | 5 | ~8K |
+
 ---
 
 ## 상세 설명
@@ -504,6 +510,26 @@ Git worktree로 격리된 작업 환경을 생성합니다.
 
 ---
 
+### 배포 및 인프라
+
+#### vercel
+
+Vercel MCP 설치부터 배포 자동화까지 Claude Code에서 Vercel을 완벽하게 활용할 수 있도록 안내합니다.
+
+- **MCP 설치 가이드**: API 토큰 발급부터 Claude Code 연결까지
+- **배포 자동화**: CLI 및 MCP를 통한 배포 워크플로우
+- **환경 변수 관리**: 환경별 변수 설정 및 동기화
+- **도메인 관리**: 커스텀 도메인 연결 및 DNS 설정
+- **17+ MCP 도구**: 배포, 프로젝트, 환경 변수, 팀 관리
+
+**지원 방식:**
+| 방식 | 설명 |
+|------|------|
+| MCP 통합 | Vercel API 직접 연결, 자연어 명령 |
+| CLI 기반 | Vercel CLI 명령어 활용 |
+
+---
+
 ## 💡 사용 방법
 
 ### 스킬 호출
@@ -528,6 +554,8 @@ Claude Code는 대화 내용을 분석하여 적절한 스킬을 자동으로 �
 | "이 URL 마크다운으로 변환해줘" | `web-to-markdown` |
 | "TDD로 개발하자" | `test-driven-development` |
 | "랜딩 페이지 만들어줘" | `landing-page-guide` |
+| "Vercel MCP 설정해줘" | `vercel` |
+| "Vercel에 배포해줘" | `vercel` |
 
 ---
 

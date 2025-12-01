@@ -345,6 +345,83 @@ Use this skill when:
 
 ---
 
+### Workflow 7: Update README Header (개발 상태 관리)
+
+**Purpose**: 개발 프로젝트 README 상단의 진행 상황, Tech Stack, Used Skills 업데이트
+
+**Reference**: `references/readme-header-rules.md` 참조
+
+**Steps**:
+
+1. **프로젝트 README 확인**:
+   ```bash
+   test -f README.md
+   ```
+   - If NOT exists: 새 README 생성 제안
+   - If exists: 기존 내용 분석
+
+2. **업데이트 유형 선택** (via AskUserQuestion):
+   - **progress**: 개발 진행 상황 업데이트
+   - **techstack**: 기술 스택 업데이트/자동 감지
+   - **skills**: 사용된 스킬 업데이트
+   - **all**: 전체 헤더 갱신
+
+3. **진행 상황 업데이트 (progress)**:
+   - 각 단계별 진행률 입력 요청:
+     - 기획/설계: 0-100%
+     - 핵심 기능: 0-100%
+     - UI/UX: 0-100%
+     - 테스트: 0-100%
+     - 문서화: 0-100%
+     - 배포: 0-100%
+   - 전체 진행률 자동 계산
+   - Progress bar 생성:
+     ```
+     채움 칸수 = round(진행률 / 5)
+     █ = 채움, ░ = 빈칸 (총 20칸)
+     ```
+   - 상태 아이콘 자동 지정:
+     - 100%: ✅
+     - 1-99%: 🔄
+     - 0%: ⏳
+
+4. **Tech Stack 자동 감지 (techstack)**:
+   - 프로젝트 파일 스캔:
+     - `package.json` → Node.js dependencies
+     - `tsconfig.json` → TypeScript
+     - `Cargo.toml` → Rust
+     - `pyproject.toml` → Python
+     - `go.mod` → Go
+     - `pubspec.yaml` → Flutter
+     - `prisma/schema.prisma` → Prisma
+     - `docker-compose.yml` → Docker
+   - 버전 정보 추출
+   - Tech Stack 테이블 생성
+
+5. **Used Skills 업데이트 (skills)**:
+   - 현재 기록된 스킬 표시
+   - 새 스킬 추가/제거 옵션
+   - 각 스킬의 용도/단계 기록
+
+6. **README.md 업데이트**:
+   - 기존 헤더 섹션 대체 또는 새로 삽입
+   - 프로젝트 제목 바로 아래 배치
+
+7. **Report completion**:
+   ```
+   ✅ README 헤더 업데이트 완료!
+
+   📊 진행 상황: 45% (핵심 기능 개발 중)
+   🛠️ Tech Stack: TypeScript, Next.js 15, PostgreSQL
+   🎯 Used Skills: 3개 스킬 기록
+
+   변경 사항:
+   - 핵심 기능: 40% → 60%
+   - Tech Stack: Prisma 추가
+   ```
+
+---
+
 ## Helper Functions
 
 ### Version Management
@@ -541,6 +618,7 @@ Example: 1.0.0, 2.1.3, 0.5.2
 | `update-marketplace` | Update marketplace metadata |
 | `publish` | Git deployment with versioning |
 | `validate` | Validate marketplace configuration |
+| `update-header` | Update README header (progress, techstack, skills) |
 
 ---
 
@@ -591,6 +669,38 @@ Skill:
 - Tag created: v1.1.0
 
 ✅ Published successfully!
+```
+
+### Example 4: Updating README header
+
+```
+User: README 헤더 업데이트해줘
+Skill: /skill-manager update-header
+
+[Asks for update type]
+User: all
+
+[Asks for progress - 각 단계별 진행률]
+User: 기획 100%, 핵심 기능 60%, UI 20%, 나머지 0%
+
+[Detects Tech Stack]
+Skill: 감지된 Tech Stack:
+- TypeScript 5.x
+- Next.js 15.x
+- React 19.x
+- Tailwind CSS 3.x
+- PostgreSQL 16.x
+- Prisma 5.x
+
+[Asks for skills used]
+User: nextjs15-init, landing-page-guide, test-driven-development
+
+Skill:
+✅ README 헤더 업데이트 완료!
+
+📊 진행 상황: 30% (핵심 기능 개발 중)
+🛠️ Tech Stack: 6개 기술 기록
+🎯 Used Skills: 3개 스킬 기록
 ```
 
 ---
