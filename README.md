@@ -406,7 +406,7 @@ Playwright로 로컬 웹앱을 상호작용하고 테스트합니다.
 
 ---
 
-### Crypto 거래 시스템
+### Crypto 거래 시스템 (Crypto-Agent repository ONLY)
 
 #### crypto-agent-architect
 
