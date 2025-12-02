@@ -124,6 +124,8 @@ your-project/
 | [agent-testing-framework](#agent-testing-framework) | AI 에이전트 TDD/E2E/Chaos 테스트 프레임워크 | 6 | ~12K |
 | [webapp-testing](#webapp-testing) | Playwright 기반 웹앱 상호작용 테스트 | 4 | ~3K |
 
+> 💡 **TDD 스킬 번들**: `tdd-mvp-planner` + `test-driven-development` + `finishing-a-development-branch`는 함께 사용하면 Progress Tracking 기능이 활성화됩니다. [상세 보기](#-tdd-스킬-번들)
+
 ### 개발 전문가 페르소나
 
 | 스킬 | 설명 | 도구 | 토큰 |
@@ -507,6 +509,75 @@ Git worktree로 격리된 작업 환경을 생성합니다.
 - 로컬 merge 또는 PR 생성
 - Worktree 자동 정리
 - 안전한 작업 삭제
+
+---
+
+### 🔗 TDD 스킬 번들
+
+다음 3개 스킬은 **함께 사용**하면 README Progress Tracking 기능이 활성화됩니다.
+
+#### 번들 구성
+
+| 스킬 | 역할 | Progress 연동 |
+|------|------|---------------|
+| `tdd-mvp-planner` | PLAN.md + TODO.md 생성 | Progress Bar 초기화 |
+| `test-driven-development` | RED→GREEN→REFACTOR→COMMIT 사이클 | COMMIT 시 Progress 업데이트 |
+| `finishing-a-development-branch` | 브랜치 완료 및 통합 | Progress 100% 검증 |
+
+#### Progress Bar 예시
+
+README.md 상단에 자동 생성:
+
+```markdown
+> **Development Progress**
+> ```
+> Overall:  [████████░░] 80% (24/30 tasks)
+> v0.1.0:   [██████████] 100% Complete
+> v0.2.0:   [██████░░░░] 60%  In Progress
+> v0.3.0:   [░░░░░░░░░░] 0%   Pending
+> ```
+> **Current Phase**: GREEN | **Last Updated**: 2025-12-02
+```
+
+#### 워크플로우
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                    tdd-mvp-planner                       │
+│  Architecture → PLAN.md → TODO.md → Progress Bar 초기화  │
+└─────────────────────────┬───────────────────────────────┘
+                          ↓
+┌─────────────────────────────────────────────────────────┐
+│               test-driven-development                    │
+│  RED → GREEN → REFACTOR → COMMIT → Progress 업데이트     │
+│                    ↺ (반복)                              │
+└─────────────────────────┬───────────────────────────────┘
+                          ↓
+┌─────────────────────────────────────────────────────────┐
+│           finishing-a-development-branch                 │
+│  Progress 100% 검증 → Merge/PR → Worktree 정리          │
+└─────────────────────────────────────────────────────────┘
+```
+
+#### 설치 (3개 스킬 한 번에)
+
+```bash
+# Unix/Mac/Git Bash
+SKILLS="tdd-mvp-planner test-driven-development finishing-a-development-branch"
+mkdir -p .claude/skills
+git clone --depth 1 https://github.com/tygwan/my-skills.git /tmp/my-skills-temp
+for skill in $SKILLS; do cp -r /tmp/my-skills-temp/$skill .claude/skills/; done
+rm -rf /tmp/my-skills-temp
+```
+
+```cmd
+:: Windows CMD
+set SKILLS=tdd-mvp-planner test-driven-development finishing-a-development-branch
+if not exist ".claude\skills" mkdir ".claude\skills"
+git clone --depth 1 https://github.com/tygwan/my-skills.git "%TEMP%\my-skills-temp"
+for %%s in (%SKILLS%) do xcopy "%TEMP%\my-skills-temp\%%s" ".claude\skills\%%s\" /E /I /Y
+rmdir /S /Q "%TEMP%\my-skills-temp"
+```
 
 ---
 

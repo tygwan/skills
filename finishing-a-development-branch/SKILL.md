@@ -37,7 +37,42 @@ Stop. Don't proceed to Step 2.
 
 **If tests pass:** Continue to Step 2.
 
-### Step 2: Determine Base Branch
+### Step 2: Verify Progress (Optional)
+
+> **연동 스킬**: 이 Step은 `tdd-mvp-planner`, `test-driven-development` 스킬과 함께 동작합니다.
+
+**TODO.md와 README Progress Bar가 존재하는 경우:**
+
+1. **TODO.md 파싱**: 미완료 작업 `- [ ]` 확인
+2. **Progress 확인**: README.md에서 Overall Progress 확인
+3. **검증 결과 보고**
+
+#### Progress 100% (정상)
+```
+✅ Progress Check: 100% Complete (30/30 tasks)
+All milestones completed. Ready to proceed.
+```
+
+#### Progress < 100% (경고)
+```
+⚠️ Progress Check: 80% Complete (24/30 tasks)
+
+Incomplete tasks:
+- [ ] v0.3.0: Task A
+- [ ] v0.3.0: Task B
+- [ ] v0.3.0: Task C
+
+Options:
+1. Proceed anyway (incomplete work)
+2. Return to development
+```
+
+**사용자가 "Proceed anyway" 선택 시**: Step 3로 진행
+**사용자가 "Return to development" 선택 시**: 스킬 종료
+
+**TODO.md가 없는 경우**: 이 Step 건너뛰고 Step 3로 진행
+
+### Step 3: Determine Base Branch
 
 ```bash
 # Try common base branches
@@ -46,7 +81,7 @@ git merge-base HEAD main 2>/dev/null || git merge-base HEAD master 2>/dev/null
 
 Or ask: "This branch split from main - is that correct?"
 
-### Step 3: Present Options
+### Step 4: Present Options
 
 Present exactly these 4 options:
 
@@ -63,7 +98,7 @@ Which option?
 
 **Don't add explanation** - keep options concise.
 
-### Step 4: Execute Choice
+### Step 5: Execute Choice
 
 #### Option 1: Merge Locally
 
@@ -84,7 +119,7 @@ git merge <feature-branch>
 git branch -d <feature-branch>
 ```
 
-Then: Cleanup worktree (Step 5)
+Then: Cleanup worktree (Step 6)
 
 #### Option 2: Push and Create PR
 
@@ -103,7 +138,7 @@ EOF
 )"
 ```
 
-Then: Cleanup worktree (Step 5)
+Then: Cleanup worktree (Step 6)
 
 #### Option 3: Keep As-Is
 
@@ -131,9 +166,9 @@ git checkout <base-branch>
 git branch -D <feature-branch>
 ```
 
-Then: Cleanup worktree (Step 5)
+Then: Cleanup worktree (Step 6)
 
-### Step 5: Cleanup Worktree
+### Step 6: Cleanup Worktree
 
 **For Options 1, 2, 4:**
 

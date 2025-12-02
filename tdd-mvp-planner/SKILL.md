@@ -348,6 +348,52 @@ Mark complete when:
 - ✅ User approves final version
 - ✅ Ready for development execution
 
+### Phase 8: README Progress Bar 초기화
+
+TODO.md 생성 완료 후, README.md 상단에 Progress Bar를 추가합니다.
+
+> **연동 스킬**: 이 Phase는 `test-driven-development`, `finishing-a-development-branch` 스킬과 함께 동작합니다.
+
+#### Progress Bar 형식
+
+README.md 최상단에 다음 형식으로 추가:
+
+```markdown
+> **Development Progress**
+> ```
+> Overall:  [░░░░░░░░░░] 0% (0/N tasks)
+> v0.1.0:   [░░░░░░░░░░] 0%   Pending
+> v0.2.0:   [░░░░░░░░░░] 0%   Pending
+> ...
+> ```
+> **Current Phase**: RED | **Last Updated**: YYYY-MM-DD
+```
+
+#### 초기화 절차
+
+1. **TODO.md 파싱**: Milestone별 총 Task 수 추출
+2. **Progress Bar 생성**: 모든 Milestone 0% 상태로 초기화
+3. **README.md 업데이트**: 기존 내용 위에 Progress Bar 추가
+4. **타임스탬프**: 현재 날짜로 Last Updated 설정
+
+#### Progress Bar 문자 규칙
+
+| 진행률 | Bar 표시 |
+|--------|----------|
+| 0% | `[░░░░░░░░░░]` |
+| 10% | `[█░░░░░░░░░]` |
+| 50% | `[█████░░░░░]` |
+| 100% | `[██████████]` |
+
+상세 내용은 `references/progress-tracking.md` 참조.
+
+#### 완료 조건
+
+- ✅ README.md 상단에 Progress Bar 추가됨
+- ✅ 모든 Milestone이 0% Pending 상태
+- ✅ Total tasks 수가 TODO.md와 일치
+- ✅ Current Phase가 RED로 설정됨
+
 ## Version Management
 
 **File Naming Convention**:

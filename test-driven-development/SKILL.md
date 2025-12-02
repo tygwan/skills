@@ -362,3 +362,77 @@ Otherwise → not TDD
 ```
 
 No exceptions without your human partner's permission.
+
+## Progress Tracking Integration
+
+> **연동 스킬**: 이 섹션은 `tdd-mvp-planner`, `finishing-a-development-branch` 스킬과 함께 동작합니다.
+
+### COMMIT 완료 후 Progress 업데이트
+
+매 COMMIT 단계 완료 시, README.md의 Progress Bar를 업데이트합니다.
+
+#### 업데이트 절차
+
+1. **TODO.md 파싱**: 완료된 작업 `- [x]` 카운트
+2. **진행률 계산**: `(완료 / 전체) * 100`
+3. **Progress Bar 업데이트**: README.md 상단 갱신
+4. **Phase 업데이트**: Current Phase를 다음 단계로 변경
+
+#### Progress Bar 형식
+
+```markdown
+> **Development Progress**
+> ```
+> Overall:  [████░░░░░░] 40% (12/30 tasks)
+> v0.1.0:   [██████████] 100% Complete
+> v0.2.0:   [██░░░░░░░░] 20%  In Progress
+> ```
+> **Current Phase**: GREEN | **Last Updated**: YYYY-MM-DD
+```
+
+#### Phase 순환
+
+```
+RED → GREEN → REFACTOR → COMMIT → (Progress Update) → RED
+```
+
+COMMIT 완료 시:
+1. TODO.md에서 해당 작업을 `- [x]`로 체크
+2. Progress Bar 업데이트
+3. Current Phase를 RED로 리셋 (다음 사이클 시작)
+
+#### Bar 문자 계산
+
+| 진행률 | 채워진 칸 (█) | 빈 칸 (░) |
+|--------|---------------|-----------|
+| 0-9% | 0 | 10 |
+| 10-19% | 1 | 9 |
+| ... | ... | ... |
+| 90-99% | 9 | 1 |
+| 100% | 10 | 0 |
+
+#### 상태 텍스트
+
+| 상태 | 조건 |
+|------|------|
+| `Complete` | 100% |
+| `In Progress` | 0% < x < 100% |
+| `Pending` | 0% |
+
+### 예시: COMMIT 후 업데이트
+
+**Before (COMMIT 전)**:
+```markdown
+> Overall:  [███░░░░░░░] 30% (9/30 tasks)
+> v0.1.0:   [██████████] 100% Complete
+> v0.2.0:   [░░░░░░░░░░] 0%   Pending
+> **Current Phase**: REFACTOR
+```
+
+**After (COMMIT 후)**:
+```markdown
+> Overall:  [████░░░░░░] 33% (10/30 tasks)
+> v0.1.0:   [██████████] 100% Complete
+> v0.2.0:   [█░░░░░░░░░] 10%  In Progress
+> **Current Phase**: RED
+```
