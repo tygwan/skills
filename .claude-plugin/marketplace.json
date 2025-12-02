@@ -1,7 +1,7 @@
 {
   "name": "tygwan-skills",
   "displayName": "Tygwan's Skills Marketplace",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "owner": {
     "name": "Tygwan",
     "url": "https://github.com/tygwan"
@@ -200,6 +200,78 @@
       "version": "1.0.0",
       "category": "Documentation",
       "keywords": ["markdown", "web-scraping", "documentation", "ai-optimization"]
+    },
+    {
+      "name": "brainstorming",
+      "source": "./brainstorming",
+      "description": "Refines rough ideas into fully-formed designs through collaborative questioning and alternative exploration",
+      "version": "1.0.0",
+      "category": "Prompt Tools",
+      "keywords": ["brainstorming", "ideation", "design", "collaboration"]
+    },
+    {
+      "name": "railway",
+      "source": "./railway",
+      "description": "Railway MCP installation and cloud deployment automation skill for Claude Code",
+      "version": "1.0.0",
+      "category": "Deployment & Infrastructure",
+      "keywords": ["railway", "deployment", "cloud", "mcp", "infrastructure"]
+    },
+    {
+      "name": "senior-architect",
+      "source": "./senior-architect",
+      "description": "Software architecture skill for designing scalable systems with architecture diagrams and tech stack decisions",
+      "version": "1.0.0",
+      "category": "Developer Personas",
+      "keywords": ["architecture", "system-design", "diagrams", "tech-stack", "patterns"]
+    },
+    {
+      "name": "senior-backend",
+      "source": "./senior-backend",
+      "description": "Backend development skill for APIs, database optimization, security, and performance tuning",
+      "version": "1.0.0",
+      "category": "Developer Personas",
+      "keywords": ["backend", "api", "database", "nodejs", "graphql", "rest"]
+    },
+    {
+      "name": "senior-secops",
+      "source": "./senior-secops",
+      "description": "SecOps skill for security scanning, vulnerability assessment, compliance, and security automation",
+      "version": "1.0.0",
+      "category": "Developer Personas",
+      "keywords": ["security", "secops", "vulnerability", "compliance", "audit"]
+    },
+    {
+      "name": "systematic-debugging",
+      "source": "./systematic-debugging",
+      "description": "Four-phase debugging framework with root cause investigation, pattern analysis, and hypothesis testing",
+      "version": "1.0.0",
+      "category": "Testing & Quality",
+      "keywords": ["debugging", "root-cause", "troubleshooting", "analysis"]
+    },
+    {
+      "name": "tdd-mvp-planner",
+      "source": "./tdd-mvp-planner",
+      "description": "Transform architecture documents into PLAN.md and TODO.md with TDD methodology and Codex validation",
+      "version": "1.0.0",
+      "category": "Prompt Tools",
+      "keywords": ["tdd", "planning", "architecture", "todo", "codex"]
+    },
+    {
+      "name": "test-driven-development",
+      "source": "./test-driven-development",
+      "description": "TDD workflow enforcing RED-GREEN-REFACTOR cycle with test-first development",
+      "version": "1.0.0",
+      "category": "Testing & Quality",
+      "keywords": ["tdd", "testing", "red-green-refactor", "test-first"]
+    },
+    {
+      "name": "vercel",
+      "source": "./vercel",
+      "description": "Vercel MCP installation and deployment automation skill for Claude Code",
+      "version": "1.0.0",
+      "category": "Deployment & Infrastructure",
+      "keywords": ["vercel", "deployment", "mcp", "infrastructure", "hosting"]
     }
   ]
 }

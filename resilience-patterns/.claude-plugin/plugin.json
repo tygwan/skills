@@ -1,0 +1,17 @@
+{
+  "name": "resilience-patterns",
+  "version": "1.0.0",
+  "description": "Circuit Breaker, Retry Logic, DLQ, and Rate Limiting for fault-tolerant systems",
+  "author": {
+    "name": "Tygwan",
+    "url": "https://github.com/tygwan"
+  },
+  "homepage": "https://github.com/tygwan/skills/tree/master/resilience-patterns",
+  "keywords": [
+    "circuit-breaker",
+    "retry",
+    "dlq",
+    "rate-limiting",
+    "resilience"
+  ]
+}

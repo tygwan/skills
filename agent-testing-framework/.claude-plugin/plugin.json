@@ -1,0 +1,17 @@
+{
+  "name": "agent-testing-framework",
+  "version": "1.0.0",
+  "description": "Testing framework for AI agents with TDD, unit/integration/E2E tests, and 80%+ coverage",
+  "author": {
+    "name": "Tygwan",
+    "url": "https://github.com/tygwan"
+  },
+  "homepage": "https://github.com/tygwan/skills/tree/master/agent-testing-framework",
+  "keywords": [
+    "testing",
+    "tdd",
+    "pytest",
+    "playwright",
+    "chaos-engineering"
+  ]
+}

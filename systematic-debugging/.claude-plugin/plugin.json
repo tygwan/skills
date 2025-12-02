@@ -1,0 +1,16 @@
+{
+  "name": "systematic-debugging",
+  "version": "1.0.0",
+  "description": "Four-phase debugging framework with root cause investigation, pattern analysis, and hypothesis testing",
+  "author": {
+    "name": "Tygwan",
+    "url": "https://github.com/tygwan"
+  },
+  "homepage": "https://github.com/tygwan/skills/tree/master/systematic-debugging",
+  "keywords": [
+    "debugging",
+    "root-cause",
+    "troubleshooting",
+    "analysis"
+  ]
+}

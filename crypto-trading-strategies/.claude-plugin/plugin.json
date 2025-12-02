@@ -1,0 +1,17 @@
+{
+  "name": "crypto-trading-strategies",
+  "version": "1.0.0",
+  "description": "5 crypto trading strategies: arbitrage, market making, momentum, mean reversion, grid",
+  "author": {
+    "name": "Tygwan",
+    "url": "https://github.com/tygwan"
+  },
+  "homepage": "https://github.com/tygwan/skills/tree/master/crypto-trading-strategies",
+  "keywords": [
+    "strategy",
+    "arbitrage",
+    "market-making",
+    "momentum",
+    "backtesting"
+  ]
+}

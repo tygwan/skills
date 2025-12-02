@@ -1,0 +1,17 @@
+{
+  "name": "nextjs15-init",
+  "version": "1.0.0",
+  "description": "Create Next.js 15 projects with App Router, ShadCN, Zustand, and modern stack",
+  "author": {
+    "name": "Tygwan",
+    "url": "https://github.com/tygwan"
+  },
+  "homepage": "https://github.com/tygwan/skills/tree/master/nextjs15-init",
+  "keywords": [
+    "nextjs",
+    "react",
+    "typescript",
+    "shadcn",
+    "zustand"
+  ]
+}

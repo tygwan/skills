@@ -1,0 +1,17 @@
+{
+  "name": "railway",
+  "version": "1.0.0",
+  "description": "Railway MCP installation and cloud deployment automation skill for Claude Code",
+  "author": {
+    "name": "Tygwan",
+    "url": "https://github.com/tygwan"
+  },
+  "homepage": "https://github.com/tygwan/skills/tree/master/railway",
+  "keywords": [
+    "railway",
+    "deployment",
+    "cloud",
+    "mcp",
+    "infrastructure"
+  ]
+}

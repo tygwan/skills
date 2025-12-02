@@ -1,0 +1,16 @@
+{
+  "name": "web-to-markdown",
+  "version": "1.0.0",
+  "description": "Convert web pages to markdown with AI optimization and dual mode support",
+  "author": {
+    "name": "Tygwan",
+    "url": "https://github.com/tygwan"
+  },
+  "homepage": "https://github.com/tygwan/skills/tree/master/web-to-markdown",
+  "keywords": [
+    "markdown",
+    "web-scraping",
+    "documentation",
+    "ai-optimization"
+  ]
+}

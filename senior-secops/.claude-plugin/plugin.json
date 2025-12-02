@@ -1,0 +1,17 @@
+{
+  "name": "senior-secops",
+  "version": "1.0.0",
+  "description": "SecOps skill for security scanning, vulnerability assessment, compliance, and security automation",
+  "author": {
+    "name": "Tygwan",
+    "url": "https://github.com/tygwan"
+  },
+  "homepage": "https://github.com/tygwan/skills/tree/master/senior-secops",
+  "keywords": [
+    "security",
+    "secops",
+    "vulnerability",
+    "compliance",
+    "audit"
+  ]
+}

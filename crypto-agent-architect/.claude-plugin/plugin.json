@@ -1,0 +1,17 @@
+{
+  "name": "crypto-agent-architect",
+  "version": "1.0.0",
+  "description": "ARCHITECTUREv4 5-layer crypto trading agent design with Binance integration",
+  "author": {
+    "name": "Tygwan",
+    "url": "https://github.com/tygwan"
+  },
+  "homepage": "https://github.com/tygwan/skills/tree/master/crypto-agent-architect",
+  "keywords": [
+    "crypto",
+    "trading",
+    "binance",
+    "defi",
+    "architecture"
+  ]
+}

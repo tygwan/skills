@@ -1,0 +1,16 @@
+{
+  "name": "flutter-init",
+  "version": "1.0.0",
+  "description": "Create Flutter projects with Clean Architecture, Riverpod 3.0, and Drift",
+  "author": {
+    "name": "Tygwan",
+    "url": "https://github.com/tygwan"
+  },
+  "homepage": "https://github.com/tygwan/skills/tree/master/flutter-init",
+  "keywords": [
+    "flutter",
+    "clean-architecture",
+    "riverpod",
+    "drift"
+  ]
+}

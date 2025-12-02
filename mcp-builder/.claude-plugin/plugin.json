@@ -1,0 +1,16 @@
+{
+  "name": "mcp-builder",
+  "version": "1.0.0",
+  "description": "Create high-quality MCP servers for LLM integration with external services",
+  "author": {
+    "name": "Tygwan",
+    "url": "https://github.com/tygwan"
+  },
+  "homepage": "https://github.com/tygwan/skills/tree/master/mcp-builder",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "llm",
+    "integration"
+  ]
+}

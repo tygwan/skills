@@ -1,0 +1,18 @@
+{
+  "name": "senior-backend",
+  "version": "1.0.0",
+  "description": "Backend development skill for APIs, database optimization, security, and performance tuning",
+  "author": {
+    "name": "Tygwan",
+    "url": "https://github.com/tygwan"
+  },
+  "homepage": "https://github.com/tygwan/skills/tree/master/senior-backend",
+  "keywords": [
+    "backend",
+    "api",
+    "database",
+    "nodejs",
+    "graphql",
+    "rest"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "tdd-mvp-planner",
+  "version": "1.0.0",
+  "description": "Transform architecture documents into PLAN.md and TODO.md with TDD methodology and Codex validation",
+  "author": {
+    "name": "Tygwan",
+    "url": "https://github.com/tygwan"
+  },
+  "homepage": "https://github.com/tygwan/skills/tree/master/tdd-mvp-planner",
+  "keywords": [
+    "tdd",
+    "planning",
+    "architecture",
+    "todo",
+    "codex"
+  ]
+}

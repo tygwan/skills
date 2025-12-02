@@ -1,0 +1,17 @@
+{
+  "name": "vercel",
+  "version": "1.0.0",
+  "description": "Vercel MCP installation and deployment automation skill for Claude Code",
+  "author": {
+    "name": "Tygwan",
+    "url": "https://github.com/tygwan"
+  },
+  "homepage": "https://github.com/tygwan/skills/tree/master/vercel",
+  "keywords": [
+    "vercel",
+    "deployment",
+    "mcp",
+    "infrastructure",
+    "hosting"
+  ]
+}

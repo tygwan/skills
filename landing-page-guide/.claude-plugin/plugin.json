@@ -1,0 +1,17 @@
+{
+  "name": "landing-page-guide",
+  "version": "1.0.0",
+  "description": "Guide for creating high-converting landing pages with Next.js and ShadCN UI",
+  "author": {
+    "name": "Tygwan",
+    "url": "https://github.com/tygwan"
+  },
+  "homepage": "https://github.com/tygwan/skills/tree/master/landing-page-guide",
+  "keywords": [
+    "landing-page",
+    "nextjs",
+    "shadcn",
+    "seo",
+    "conversion"
+  ]
+}

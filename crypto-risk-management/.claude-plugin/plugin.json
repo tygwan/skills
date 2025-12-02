@@ -1,0 +1,17 @@
+{
+  "name": "crypto-risk-management",
+  "version": "1.0.0",
+  "description": "Crypto-specific risk management with liquidation, gas, slippage, and MEV protection",
+  "author": {
+    "name": "Tygwan",
+    "url": "https://github.com/tygwan"
+  },
+  "homepage": "https://github.com/tygwan/skills/tree/master/crypto-risk-management",
+  "keywords": [
+    "risk",
+    "liquidation",
+    "gas",
+    "slippage",
+    "mev"
+  ]
+}

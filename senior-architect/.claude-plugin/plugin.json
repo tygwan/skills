@@ -1,0 +1,17 @@
+{
+  "name": "senior-architect",
+  "version": "1.0.0",
+  "description": "Software architecture skill for designing scalable systems with architecture diagrams and tech stack decisions",
+  "author": {
+    "name": "Tygwan",
+    "url": "https://github.com/tygwan"
+  },
+  "homepage": "https://github.com/tygwan/skills/tree/master/senior-architect",
+  "keywords": [
+    "architecture",
+    "system-design",
+    "diagrams",
+    "tech-stack",
+    "patterns"
+  ]
+}

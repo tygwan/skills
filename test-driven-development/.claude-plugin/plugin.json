@@ -1,0 +1,16 @@
+{
+  "name": "test-driven-development",
+  "version": "1.0.0",
+  "description": "TDD workflow enforcing RED-GREEN-REFACTOR cycle with test-first development",
+  "author": {
+    "name": "Tygwan",
+    "url": "https://github.com/tygwan"
+  },
+  "homepage": "https://github.com/tygwan/skills/tree/master/test-driven-development",
+  "keywords": [
+    "tdd",
+    "testing",
+    "red-green-refactor",
+    "test-first"
+  ]
+}
