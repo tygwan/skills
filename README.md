@@ -679,47 +679,194 @@ MIT License
 ---
 
 <details>
-<summary><b>📌 Claude Code 자동화 지침 (클릭하여 펼치기)</b></summary>
+<summary><b>📌 Claude Code 자동 설치 가이드 (클릭하여 펼치기)</b></summary>
 
-## CLAUDE_CODE_INSTRUCTIONS
+## CLAUDE_CODE_AUTO_INSTALL_GUIDE
 
-이 섹션은 Claude Code가 이 저장소를 읽을 때 참조하는 자동화 지침입니다.
+이 가이드는 Claude Code가 스킬 설치 요청을 받았을 때 따라야 하는 최적화된 설치 절차입니다.
 
-### 저장소 URL을 받았을 때
+---
 
-사용자가 `https://github.com/tygwan/my-skills` 또는 이 저장소의 URL을 제공하면:
+### Step 1: 플랫폼 감지 (필수 - 가장 먼저 실행)
 
-1. **WebFetch로 저장소 분석**
-   ```
-   저장소의 디렉토리 구조를 파악하고 사용 가능한 스킬 목록 확인
-   ```
+설치 명령 실행 전 **반드시** 플랫폼을 확인합니다:
 
-2. **사용자에게 스킬 목록 제시**
-   ```
-   설치 가능한 스킬:
-   - nextjs15-init: Next.js 15 프로젝트 생성
-   - flutter-init: Flutter 프로젝트 생성
-   - web-to-markdown: 웹페이지 변환
-   ... (전체 목록)
+```bash
+# 이 명령어로 플랫폼 확인
+echo $OSTYPE 2>/dev/null || echo %OS% 2>nul || echo "unknown"
+```
 
-   어떤 스킬을 설치하시겠습니까?
-   ```
+**플랫폼 판별 기준:**
+| 결과 | 플랫폼 | 사용할 명령어 셋 |
+|------|--------|-----------------|
+| `linux-gnu`, `darwin*` | Unix/Mac | Unix 명령어 |
+| `msys`, `cygwin` | Git Bash (Windows) | Unix 명령어 |
+| `Windows_NT` | Windows CMD/PowerShell | Windows 명령어 |
 
-3. **설치 실행**
-   ```bash
-   # 디렉토리 생성
-   mkdir -p .claude/skills
+---
 
-   # Git sparse checkout 또는 전체 클론 후 복사
-   git clone --depth 1 https://github.com/tygwan/my-skills.git /tmp/my-skills
-   cp -r /tmp/my-skills/<selected-skill> .claude/skills/
-   rm -rf /tmp/my-skills
-   ```
+### Step 2: 스킬 목록 확인
 
-4. **설치 확인**
-   ```
-   /skills 명령어로 설치된 스킬 확인
-   ```
+사용자에게 설치 가능한 스킬 목록을 제시합니다:
+
+**카테고리별 스킬:**
+
+| 카테고리 | 스킬 | 설명 |
+|----------|------|------|
+| **프로젝트 초기화** | `nextjs15-init` | Next.js 15 프로젝트 생성 |
+| | `flutter-init` | Flutter Clean Architecture 프로젝트 |
+| **테스팅** | `test-driven-development` | TDD 방법론 강제 |
+| | `tdd-mvp-planner` | 아키텍처 → PLAN.md + TODO.md |
+| | `systematic-debugging` | 체계적 디버깅 |
+| **배포** | `vercel` | Vercel MCP 설치 및 배포 |
+| **문서화** | `web-to-markdown` | 웹페이지 마크다운 변환 |
+| **개발도구** | `skill-creator` | 새 스킬 생성 가이드 |
+| | `mcp-builder` | MCP 서버 생성 |
+
+> 사용자에게 "어떤 스킬을 설치하시겠습니까?" 질문
+
+---
+
+### Step 3: 설치 실행 (플랫폼별 명령어)
+
+#### 🐧 Unix/Mac/Git Bash
+
+```bash
+# 1. 디렉토리 생성
+mkdir -p .claude/skills
+
+# 2. 임시 디렉토리에 클론
+git clone --depth 1 --filter=blob:none --sparse https://github.com/tygwan/my-skills.git /tmp/my-skills-temp
+
+# 3. 선택한 스킬만 체크아웃
+cd /tmp/my-skills-temp
+git sparse-checkout set <SKILL_NAME>
+
+# 4. 스킬 복사
+cp -r /tmp/my-skills-temp/<SKILL_NAME> .claude/skills/
+
+# 5. 임시 파일 정리
+rm -rf /tmp/my-skills-temp
+```
+
+#### 🪟 Windows (CMD)
+
+```cmd
+:: 1. 디렉토리 생성
+if not exist ".claude\skills" mkdir ".claude\skills"
+
+:: 2. 임시 디렉토리에 클론
+git clone --depth 1 https://github.com/tygwan/my-skills.git "%TEMP%\my-skills-temp"
+
+:: 3. 스킬 복사 (xcopy 사용 - 빠름)
+xcopy "%TEMP%\my-skills-temp\<SKILL_NAME>" ".claude\skills\<SKILL_NAME>\" /E /I /Y
+
+:: 4. 임시 파일 정리
+rmdir /S /Q "%TEMP%\my-skills-temp"
+```
+
+#### 🪟 Windows (PowerShell)
+
+```powershell
+# 1. 디렉토리 생성
+New-Item -ItemType Directory -Force -Path ".claude/skills" | Out-Null
+
+# 2. 임시 디렉토리에 클론
+git clone --depth 1 https://github.com/tygwan/my-skills.git "$env:TEMP\my-skills-temp"
+
+# 3. 스킬 복사
+Copy-Item -Path "$env:TEMP\my-skills-temp\<SKILL_NAME>" -Destination ".claude\skills\" -Recurse -Force
+
+# 4. 임시 파일 정리
+Remove-Item -Path "$env:TEMP\my-skills-temp" -Recurse -Force
+```
+
+---
+
+### Step 4: 설치 검증
+
+```bash
+# 설치된 스킬 확인 (크로스 플랫폼)
+ls .claude/skills/
+```
+
+사용자에게 안내:
+> "설치가 완료되었습니다. `/skills` 명령어로 설치된 스킬을 확인할 수 있습니다."
+
+---
+
+### 빠른 설치 (단일 스킬)
+
+**가장 빠른 방법** - git archive 사용 (네트워크 효율적):
+
+```bash
+# Unix/Mac/Git Bash - 단일 명령으로 설치
+mkdir -p .claude/skills && curl -sL https://github.com/tygwan/my-skills/archive/refs/heads/master.tar.gz | tar -xz --strip-components=1 -C .claude/skills my-skills-master/<SKILL_NAME>
+```
+
+```powershell
+# PowerShell - 단일 명령으로 설치
+New-Item -ItemType Directory -Force -Path ".claude/skills/<SKILL_NAME>" | Out-Null; Invoke-WebRequest -Uri "https://raw.githubusercontent.com/tygwan/my-skills/master/<SKILL_NAME>/SKILL.md" -OutFile ".claude/skills/<SKILL_NAME>/SKILL.md"
+```
+
+---
+
+### 다중 스킬 설치
+
+여러 스킬을 한 번에 설치할 때:
+
+```bash
+# Unix/Mac/Git Bash
+SKILLS="test-driven-development tdd-mvp-planner vercel"
+mkdir -p .claude/skills
+git clone --depth 1 https://github.com/tygwan/my-skills.git /tmp/my-skills-temp
+for skill in $SKILLS; do cp -r /tmp/my-skills-temp/$skill .claude/skills/; done
+rm -rf /tmp/my-skills-temp
+```
+
+```cmd
+:: Windows CMD
+set SKILLS=test-driven-development tdd-mvp-planner vercel
+if not exist ".claude\skills" mkdir ".claude\skills"
+git clone --depth 1 https://github.com/tygwan/my-skills.git "%TEMP%\my-skills-temp"
+for %%s in (%SKILLS%) do xcopy "%TEMP%\my-skills-temp\%%s" ".claude\skills\%%s\" /E /I /Y
+rmdir /S /Q "%TEMP%\my-skills-temp"
+```
+
+---
+
+### 설치 흐름도
+
+```
+사용자: "이 repo 스킬 설치해줘"
+         ↓
+    [README.md 읽기]
+         ↓
+    [플랫폼 감지] ←── Step 1 (필수!)
+         ↓
+    [스킬 목록 제시] ←── Step 2
+         ↓
+    [사용자 선택]
+         ↓
+    [플랫폼별 명령 실행] ←── Step 3
+         ↓
+    [설치 검증] ←── Step 4
+         ↓
+    "설치 완료!"
+```
+
+---
+
+### 트러블슈팅
+
+| 문제 | 원인 | 해결 |
+|------|------|------|
+| `mkdir -p` 오류 | Windows CMD에서 실행 | `mkdir` 또는 `New-Item` 사용 |
+| `cp -r` 오류 | Windows에서 실행 | `xcopy` 또는 `Copy-Item` 사용 |
+| 권한 오류 | 관리자 권한 필요 | 프로젝트 폴더에서 실행 확인 |
+| git clone 실패 | 네트워크 문제 | `--depth 1` 옵션 사용 |
+
+---
 
 ### 스킬 폴더 구조
 
