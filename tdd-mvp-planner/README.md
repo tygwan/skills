@@ -4,10 +4,14 @@ A domain-neutral skill for transforming architecture documents into validated, e
 
 ## Overview
 
-This skill provides a systematic 7-phase workflow for converting technical specifications and architecture documents into:
+This skill provides a systematic 10-phase workflow for converting technical specifications and architecture documents into comprehensive development documentation:
 
-- **PLAN.md**: Strategic milestone-based implementation plan with dependency analysis, risk assessment, and resource allocation
-- **TODO.md**: Tactical task list with TDD-structured tasks (RED → GREEN → REFACTOR → COMMIT)
+**All documents are saved in the project's `dev-docs/` folder:**
+
+- **dev-docs/PLAN.md**: Strategic milestone-based implementation plan with dependency analysis, risk assessment, and resource allocation
+- **dev-docs/TODO.md**: Tactical task list with TDD-structured tasks (RED → GREEN → REFACTOR → COMMIT)
+- **dev-docs/CLAUDE.md**: Project-specific Claude Code context with tech stack, commands, and development rules
+- **dev-docs/DEVELOPMENT.md**: Development workflow guide with TDD cycle, commit conventions, and testing strategy
 - **Codex Validation**: Automated quality assurance and completeness verification
 
 ## Key Features
@@ -177,13 +181,24 @@ Finalize task list:
 
 ```
 tdd-mvp-planner/
-├── SKILL.md                      # Main skill file
+├── SKILL.md                      # Main skill file (10-phase workflow)
 ├── README.md                     # This file
 └── references/                   # Reference materials
     ├── plan-template.md          # PLAN.md complete template
     ├── todo-template.md          # TODO.md complete template
     ├── tdd-principles.md         # TDD best practices
+    ├── progress-tracking.md      # Progress bar integration
     └── validation-guide.md       # Codex validation guide
+```
+
+**Output Structure** (프로젝트에 생성되는 파일):
+```
+project-root/
+└── dev-docs/                     # 모든 개발 문서 저장 위치
+    ├── PLAN.md                   # 전략적 마일스톤 계획
+    ├── TODO.md                   # 상세 작업 목록
+    ├── CLAUDE.md                 # Claude Code 컨텍스트
+    └── DEVELOPMENT.md            # 개발 워크플로우 가이드
 ```
 
 ## Templates

@@ -1,6 +1,6 @@
 ---
 name: tdd-mvp-planner
-description: This skill should be used when transforming architecture documents into executable development plans and task lists following TDD methodology. It provides a systematic 7-phase workflow for creating validated PLAN.md and TODO.md documents with Codex verification, applicable to any project type (backend, frontend, full-stack, data pipelines).
+description: Transform architecture documents into comprehensive development documentation (PLAN.md, TODO.md, CLAUDE.md, DEVELOPMENT.md) following TDD methodology. All documents are saved in the project's `dev-docs/` folder. Provides a systematic 10-phase workflow with Codex validation, applicable to any project type.
 ---
 
 # TDD MVP Planner
@@ -11,10 +11,14 @@ Transform architecture documents into actionable development plans and task list
 
 **Core Philosophy**: Architecture → Strategic PLAN → Tactical TODO → Validated Execution
 
-**Key Deliverables**:
-- `PLAN.md`: Strategic milestone plan with dependency graph, risk analysis, and resource allocation
-- `TODO.md`: Tactical task list with TDD cycle (RED → GREEN → REFACTOR → COMMIT)
+**Key Deliverables** (저장 위치: `dev-docs/` 폴더):
+- `dev-docs/PLAN.md`: Strategic milestone plan with dependency graph, risk analysis, and resource allocation
+- `dev-docs/TODO.md`: Tactical task list with TDD cycle (RED → GREEN → REFACTOR → COMMIT)
+- `dev-docs/CLAUDE.md`: Project-specific context and development instructions for Claude Code
+- `dev-docs/DEVELOPMENT.md`: Development workflow guide and project conventions
 - Codex validation ensuring completeness, feasibility, and TDD compliance
+
+> **중요**: 모든 개발 문서는 프로젝트 루트의 `dev-docs/` 폴더에 저장됩니다. 이 폴더가 없으면 자동으로 생성합니다.
 
 ## When to Use
 
@@ -394,17 +398,193 @@ README.md 최상단에 다음 형식으로 추가:
 - ✅ Total tasks 수가 TODO.md와 일치
 - ✅ Current Phase가 RED로 설정됨
 
+### Phase 9: CLAUDE.md 생성
+
+프로젝트별 Claude Code 컨텍스트 파일을 생성합니다.
+
+#### CLAUDE.md 구조
+
+```markdown
+# {Project Name} - Claude Code Context
+
+## Project Overview
+[프로젝트 개요 - 1-2 문장]
+
+## Tech Stack
+- **Language**: [언어]
+- **Framework**: [프레임워크]
+- **Database**: [DB]
+- **Testing**: [테스트 도구]
+
+## Key Commands
+```bash
+# Development
+npm run dev          # 개발 서버 실행
+npm run test         # 테스트 실행
+npm run build        # 빌드
+
+# Git Workflow
+git checkout -b feature/xxx   # 새 브랜치
+```
+
+## Project Structure
+```
+src/
+├── components/      # UI 컴포넌트
+├── services/        # 비즈니스 로직
+├── utils/           # 유틸리티
+└── tests/           # 테스트 파일
+```
+
+## Development Rules
+1. TDD 원칙 준수 (RED → GREEN → REFACTOR)
+2. 커밋 전 모든 테스트 통과 확인
+3. PR 전 lint 및 type check 실행
+
+## References
+- `dev-docs/PLAN.md`: 마일스톤 계획
+- `dev-docs/TODO.md`: 작업 목록
+- `dev-docs/DEVELOPMENT.md`: 개발 워크플로우
+```
+
+#### 생성 절차
+
+1. **프로젝트 분석**: 아키텍처 문서에서 기술 스택 추출
+2. **명령어 수집**: package.json 또는 프로젝트 설정에서 주요 명령어 파악
+3. **구조 생성**: 프로젝트 구조 문서화
+4. **규칙 정의**: 개발 규칙 및 컨벤션 명시
+5. **파일 저장**: `dev-docs/CLAUDE.md`에 저장
+
+#### 완료 조건
+
+- ✅ dev-docs/CLAUDE.md 파일 생성됨
+- ✅ 기술 스택 정보 포함
+- ✅ 주요 명령어 문서화
+- ✅ 프로젝트 구조 명시
+- ✅ 개발 규칙 정의됨
+
+### Phase 10: DEVELOPMENT.md 생성
+
+개발 워크플로우 가이드를 생성합니다.
+
+#### DEVELOPMENT.md 구조
+
+```markdown
+# {Project Name} - Development Guide
+
+## Quick Start
+
+### Prerequisites
+- Node.js v20+
+- npm v10+
+- [기타 필수 도구]
+
+### Setup
+```bash
+git clone [repository]
+cd [project]
+npm install
+npm run dev
+```
+
+## Development Workflow
+
+### 1. Branch Naming
+- `feature/xxx` - 새 기능
+- `fix/xxx` - 버그 수정
+- `refactor/xxx` - 리팩토링
+- `docs/xxx` - 문서 작업
+
+### 2. TDD Cycle
+1. **RED**: 실패하는 테스트 작성
+2. **GREEN**: 테스트 통과하는 최소 코드 작성
+3. **REFACTOR**: 코드 개선 (테스트 유지)
+4. **COMMIT**: 변경사항 커밋
+
+### 3. Commit Convention
+```
+feat(scope): add new feature
+fix(scope): fix bug description
+refactor(scope): refactor code
+test(scope): add tests
+docs(scope): update documentation
+```
+
+### 4. Code Review Checklist
+- [ ] 테스트 커버리지 충족
+- [ ] 린트 오류 없음
+- [ ] 타입 체크 통과
+- [ ] 문서 업데이트됨
+
+## Testing Strategy
+
+### Unit Tests
+```bash
+npm run test:unit
+```
+
+### Integration Tests
+```bash
+npm run test:integration
+```
+
+### E2E Tests
+```bash
+npm run test:e2e
+```
+
+## Deployment
+
+### Staging
+```bash
+npm run deploy:staging
+```
+
+### Production
+```bash
+npm run deploy:production
+```
+
+## Troubleshooting
+
+### Common Issues
+1. **Issue**: [문제 설명]
+   **Solution**: [해결 방법]
+
+## Resources
+- PLAN.md: 전략적 마일스톤 계획
+- TODO.md: 상세 작업 목록
+- CLAUDE.md: Claude Code 컨텍스트
+```
+
+#### 생성 절차
+
+1. **환경 분석**: 개발 환경 요구사항 파악
+2. **워크플로우 정의**: Git 워크플로우 및 브랜치 전략
+3. **TDD 가이드**: TDD 사이클 설명
+4. **테스트 전략**: 테스트 레벨별 실행 방법
+5. **배포 가이드**: 배포 프로세스 문서화
+6. **파일 저장**: `dev-docs/DEVELOPMENT.md`에 저장
+
+#### 완료 조건
+
+- ✅ dev-docs/DEVELOPMENT.md 파일 생성됨
+- ✅ Quick Start 가이드 포함
+- ✅ TDD 워크플로우 문서화
+- ✅ 커밋 컨벤션 정의
+- ✅ 테스트 전략 명시
+
 ## Version Management
 
-**File Naming Convention**:
+**File Naming Convention** (모든 파일은 `dev-docs/` 폴더에 저장):
 ```
-PLAN.md          (current version)
-PLAN_v1.md       (archived previous version)
-PLAN_v2.md       (archived previous version)
-
-TODO.md          (current version)
-TODO_v1.md       (archived previous version)
-TODO_v2.md       (archived previous version)
+dev-docs/
+├── PLAN.md          (current version)
+├── PLAN_v1.md       (archived previous version)
+├── TODO.md          (current version)
+├── TODO_v1.md       (archived previous version)
+├── CLAUDE.md        (project context)
+└── DEVELOPMENT.md   (development workflow)
 ```
 
 **Version Header Format**:
@@ -518,30 +698,43 @@ Before considering TODO.md complete:
 
 ## Final Output
 
-Upon completion of all phases, deliver:
+Upon completion of all phases, deliver (모든 파일은 `dev-docs/` 폴더에 저장):
 
-1. **PLAN.md** (final validated version)
+1. **dev-docs/PLAN.md** (final validated version)
    - Strategic milestone plan
    - Dependency graph
    - Risk analysis
    - Resource allocation
    - Codex validated
 
-2. **TODO.md** (final validated version)
+2. **dev-docs/TODO.md** (final validated version)
    - Complete task list
    - TDD-structured tasks
    - Time estimates
    - Execution order
    - Codex validated
 
-3. **Validation Reports**
+3. **dev-docs/CLAUDE.md** (project context)
+   - Project overview and tech stack
+   - Key commands reference
+   - Project structure documentation
+   - Development rules and conventions
+
+4. **dev-docs/DEVELOPMENT.md** (development guide)
+   - Quick start guide
+   - Development workflow (TDD cycle)
+   - Commit conventions
+   - Testing strategy
+   - Deployment procedures
+
+5. **Validation Reports**
    - Codex validation outputs
    - Resolution summary
    - Version change logs
 
-4. **Execution Guidance**
+6. **Execution Guidance**
    - Recommended starting point
    - Critical path emphasis
    - Risk monitoring suggestions
 
-The project is now ready for TDD-driven development execution.
+The project is now ready for TDD-driven development execution with comprehensive documentation in `dev-docs/` folder.
