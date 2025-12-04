@@ -272,6 +272,62 @@
       "version": "1.0.0",
       "category": "Deployment & Infrastructure",
       "keywords": ["vercel", "deployment", "mcp", "infrastructure", "hosting"]
+    },
+    {
+      "name": "n8n-code-javascript",
+      "source": "./n8n-code-javascript",
+      "description": "Expert guidance for writing JavaScript in n8n Code nodes with execution modes, data patterns, and return formats",
+      "version": "1.0.0",
+      "category": "Workflow Automation",
+      "keywords": ["n8n", "javascript", "code-node", "workflow", "automation"]
+    },
+    {
+      "name": "n8n-code-python",
+      "source": "./n8n-code-python",
+      "description": "Guide for Python in n8n Code nodes covering standard library usage, data patterns, and when to use Python vs JavaScript",
+      "version": "1.0.0",
+      "category": "Workflow Automation",
+      "keywords": ["n8n", "python", "code-node", "workflow", "automation"]
+    },
+    {
+      "name": "n8n-expression-syntax",
+      "source": "./n8n-expression-syntax",
+      "description": "Comprehensive guide for n8n expressions with variables, webhook data structure, and validation rules",
+      "version": "1.0.0",
+      "category": "Workflow Automation",
+      "keywords": ["n8n", "expressions", "syntax", "variables", "workflow"]
+    },
+    {
+      "name": "n8n-mcp-tools-expert",
+      "source": "./n8n-mcp-tools-expert",
+      "description": "Master guide for n8n-mcp MCP server tools with 40+ tools, node type formats, and iterative building strategies",
+      "version": "1.0.0",
+      "category": "Workflow Automation",
+      "keywords": ["n8n", "mcp", "tools", "workflow", "automation"]
+    },
+    {
+      "name": "n8n-node-configuration",
+      "source": "./n8n-node-configuration",
+      "description": "Operation-aware n8n node configuration with progressive disclosure and 91.7% success rate methodology",
+      "version": "1.0.0",
+      "category": "Workflow Automation",
+      "keywords": ["n8n", "configuration", "nodes", "workflow", "automation"]
+    },
+    {
+      "name": "n8n-validation-expert",
+      "source": "./n8n-validation-expert",
+      "description": "Expert guide for n8n validation errors covering severity levels, profiles, auto-sanitization, and recovery strategies",
+      "version": "1.0.0",
+      "category": "Workflow Automation",
+      "keywords": ["n8n", "validation", "errors", "debugging", "workflow"]
+    },
+    {
+      "name": "n8n-workflow-patterns",
+      "source": "./n8n-workflow-patterns",
+      "description": "Proven architectural patterns for n8n workflows - Webhook, HTTP API, Database, AI Agent, and Scheduled Tasks",
+      "version": "1.0.0",
+      "category": "Workflow Automation",
+      "keywords": ["n8n", "patterns", "workflow", "architecture", "automation"]
     }
   ]
 }
