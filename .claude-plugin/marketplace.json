@@ -328,6 +328,14 @@
       "version": "1.0.0",
       "category": "Workflow Automation",
       "keywords": ["n8n", "patterns", "workflow", "architecture", "automation"]
+    },
+    {
+      "name": "atomic-task",
+      "source": "./atomic-task",
+      "description": "Context-efficient dev docs management with ~200 line atomic task documents, progress tracking, intent recording, and Git commit integration",
+      "version": "1.0.0",
+      "category": "Documentation",
+      "keywords": ["context", "dev-docs", "atomic", "task", "tracking", "intent", "git"]
     }
   ]
 }
