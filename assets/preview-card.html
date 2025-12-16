@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code Skills Collection - Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Anthropic Brand Colors */
+      --dark: #141413;
+      --light: #faf9f5;
+      --mid-gray: #b0aea5;
+      --light-gray: #e8e6dc;
+      --orange: #d97757;
+      --blue: #6a9bcc;
+      --green: #788c5d;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: linear-gradient(135deg, var(--dark) 0%, #1a1a19 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: var(--light);
+      border-radius: 24px;
+      overflow: hidden;
+      max-width: 800px;
+      width: 100%;
+      box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        0 20px 40px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    }
+
+    /* 상단 악센트 바 */
+    .accent-bar {
+      height: 4px;
+      background: linear-gradient(90deg, var(--orange), var(--blue), var(--green));
+    }
+
+    .card-header {
+      padding: 40px 40px 30px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      background: var(--dark);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--light);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .header-text h1 {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .header-text p {
+      font-size: 16px;
+      color: var(--mid-gray);
+    }
+
+    /* 통계 섹션 */
+    .stats {
+      display: flex;
+      gap: 16px;
+      padding: 0 40px 30px;
+      flex-wrap: wrap;
+    }
+
+    .stat-badge {
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .stat-badge.orange { background: var(--orange); }
+    .stat-badge.blue { background: var(--blue); }
+    .stat-badge.green { background: var(--green); }
+
+    /* 카테고리 그리드 */
+    .categories {
+      padding: 30px 40px;
+      background: var(--dark);
+    }
+
+    .categories h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--light);
+      margin-bottom: 20px;
+      opacity: 0.8;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+    }
+
+    .category-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.2s ease;
+    }
+
+    .category-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .category-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .category-icon.init { background: rgba(217, 119, 87, 0.2); }
+    .category-icon.ui { background: rgba(106, 155, 204, 0.2); }
+    .category-icon.ai { background: rgba(120, 140, 93, 0.2); }
+    .category-icon.doc { background: rgba(217, 119, 87, 0.2); }
+    .category-icon.test { background: rgba(106, 155, 204, 0.2); }
+    .category-icon.expert { background: rgba(120, 140, 93, 0.2); }
+    .category-icon.security { background: rgba(217, 119, 87, 0.2); }
+    .category-icon.crypto { background: rgba(106, 155, 204, 0.2); }
+
+    .category-info h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--light);
+      margin-bottom: 2px;
+    }
+
+    .category-info span {
+      font-size: 12px;
+      color: var(--mid-gray);
+    }
+
+    /* 푸터 */
+    .card-footer {
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--light-gray);
+    }
+
+    .github-link {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      color: var(--mid-gray);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+
+    .github-link:hover {
+      color: var(--dark);
+    }
+
+    .github-link svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .made-with {
+      font-size: 13px;
+      color: var(--mid-gray);
+    }
+
+    .made-with span {
+      color: var(--orange);
+      font-weight: 600;
+    }
+
+    /* 반응형 */
+    @media (max-width: 600px) {
+      .card-header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .stats {
+        justify-content: center;
+      }
+
+      .card-footer {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="accent-bar"></div>
+
+    <div class="card-header">
+      <div class="logo">C</div>
+      <div class="header-text">
+        <h1>Claude Code Skills</h1>
+        <p>프로젝트 자동화 스킬 모음 for Claude Code</p>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat-badge orange">
+        <span>30+</span> Skills
+      </div>
+      <div class="stat-badge blue">
+        <span>8</span> Categories
+      </div>
+      <div class="stat-badge green">
+        Open Source
+      </div>
+    </div>
+
+    <div class="categories">
+      <h2>Categories</h2>
+      <div class="category-grid">
+        <div class="category-item">
+          <div class="category-icon init">🚀</div>
+          <div class="category-info">
+            <h3>프로젝트 초기화</h3>
+            <span>2 skills</span>
+          </div>
+        </div>
+        <div class="category-item">
+          <div class="category-icon ui">🎨</div>
+          <div class="category-info">
+            <h3>UI/UX 개발</h3>
+            <span>4 skills</span>
+          </div>
+        </div>
+        <div class="category-item">
+          <div class="category-icon ai">🤖</div>
+          <div class="category-info">
+            <h3>AI 통합</h3>
+            <span>2 skills</span>
+          </div>
+        </div>
+        <div class="category-item">
+          <div class="category-icon doc">📝</div>
+          <div class="category-info">
+            <h3>문서화</h3>
+            <span>2 skills</span>
+          </div>
+        </div>
+        <div class="category-item">
+          <div class="category-icon test">🧪</div>
+          <div class="category-info">
+            <h3>테스팅</h3>
+            <span>4 skills</span>
+          </div>
+        </div>
+        <div class="category-item">
+          <div class="category-icon expert">👨‍💻</div>
+          <div class="category-info">
+            <h3>전문가 페르소나</h3>
+            <span>3 skills</span>
+          </div>
+        </div>
+        <div class="category-item">
+          <div class="category-icon security">🛡️</div>
+          <div class="category-info">
+            <h3>보안 & 신뢰성</h3>
+            <span>2 skills</span>
+          </div>
+        </div>
+        <div class="category-item">
+          <div class="category-icon crypto">💰</div>
+          <div class="category-info">
+            <h3>Crypto 거래</h3>
+            <span>3 skills</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <a href="https://github.com/tygwan/my-skills" class="github-link">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+        github.com/tygwan/my-skills
+      </a>
+      <div class="made-with">Made with <span>Claude Code</span></div>
+    </div>
+  </div>
+</body>
+</html>

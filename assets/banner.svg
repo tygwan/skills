@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
+  <defs>
+    <!-- Claude 스타일 그라데이션 -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#141413"/>
+      <stop offset="100%" style="stop-color:#1a1a19"/>
+    </linearGradient>
+
+    <!-- 악센트 그라데이션 -->
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d97757"/>
+      <stop offset="50%" style="stop-color:#6a9bcc"/>
+      <stop offset="100%" style="stop-color:#788c5d"/>
+    </linearGradient>
+
+    <!-- 글로우 효과 -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- 소프트 그림자 -->
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#d97757" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- 배경 -->
+  <rect width="1200" height="400" fill="url(#bgGradient)"/>
+
+  <!-- 장식 요소 - 좌측 상단 -->
+  <circle cx="50" cy="50" r="80" fill="#d97757" opacity="0.1"/>
+  <circle cx="80" cy="80" r="40" fill="#d97757" opacity="0.15"/>
+
+  <!-- 장식 요소 - 우측 하단 -->
+  <circle cx="1150" cy="350" r="100" fill="#6a9bcc" opacity="0.1"/>
+  <circle cx="1120" cy="320" r="50" fill="#788c5d" opacity="0.15"/>
+
+  <!-- 장식 라인 -->
+  <line x1="100" y1="380" x2="400" y2="380" stroke="url(#accentGradient)" stroke-width="2" opacity="0.5"/>
+  <line x1="800" y1="20" x2="1100" y2="20" stroke="url(#accentGradient)" stroke-width="2" opacity="0.5"/>
+
+  <!-- Claude 로고 심볼 (추상화된 형태) -->
+  <g transform="translate(100, 150)">
+    <!-- 메인 심볼 -->
+    <rect x="0" y="0" width="100" height="100" rx="20" fill="#d97757" filter="url(#softShadow)"/>
+    <text x="50" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="700" fill="#faf9f5" text-anchor="middle">C</text>
+  </g>
+
+  <!-- 메인 타이틀 -->
+  <text x="240" y="185" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="56" font-weight="700" fill="#faf9f5">
+    Claude Code Skills
+  </text>
+
+  <!-- 태그라인 -->
+  <text x="240" y="235" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="24" fill="#b0aea5">
+    프로젝트 자동화 스킬 모음 for Claude Code
+  </text>
+
+  <!-- 하단 통계 뱃지들 -->
+  <g transform="translate(240, 280)">
+    <!-- Skills 뱃지 -->
+    <rect x="0" y="0" width="120" height="36" rx="18" fill="#d97757" opacity="0.2"/>
+    <rect x="0" y="0" width="120" height="36" rx="18" fill="none" stroke="#d97757" stroke-width="1.5"/>
+    <text x="60" y="24" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#d97757" text-anchor="middle">30+ Skills</text>
+
+    <!-- Categories 뱃지 -->
+    <rect x="140" y="0" width="140" height="36" rx="18" fill="#6a9bcc" opacity="0.2"/>
+    <rect x="140" y="0" width="140" height="36" rx="18" fill="none" stroke="#6a9bcc" stroke-width="1.5"/>
+    <text x="210" y="24" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#6a9bcc" text-anchor="middle">8 Categories</text>
+
+    <!-- Open Source 뱃지 -->
+    <rect x="300" y="0" width="140" height="36" rx="18" fill="#788c5d" opacity="0.2"/>
+    <rect x="300" y="0" width="140" height="36" rx="18" fill="none" stroke="#788c5d" stroke-width="1.5"/>
+    <text x="370" y="24" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#788c5d" text-anchor="middle">Open Source</text>
+  </g>
+
+  <!-- 우측 장식 아이콘들 -->
+  <g transform="translate(950, 120)">
+    <!-- 코드 아이콘 -->
+    <rect x="0" y="0" width="60" height="60" rx="12" fill="#1e1e1d"/>
+    <text x="30" y="42" font-family="monospace" font-size="28" fill="#d97757" text-anchor="middle">&lt;/&gt;</text>
+
+    <!-- 자동화 아이콘 -->
+    <rect x="80" y="0" width="60" height="60" rx="12" fill="#1e1e1d"/>
+    <text x="110" y="42" font-family="system-ui, sans-serif" font-size="28" fill="#6a9bcc" text-anchor="middle">⚡</text>
+
+    <!-- AI 아이콘 -->
+    <rect x="160" y="0" width="60" height="60" rx="12" fill="#1e1e1d"/>
+    <text x="190" y="42" font-family="system-ui, sans-serif" font-size="28" fill="#788c5d" text-anchor="middle">🤖</text>
+  </g>
+
+  <!-- 하단 URL -->
+  <text x="1050" y="360" font-family="monospace" font-size="14" fill="#b0aea5" text-anchor="middle">
+    github.com/tygwan/my-skills
+  </text>
+</svg>

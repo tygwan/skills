@@ -1,6 +1,17 @@
-# Claude Code Skills Collection
+<p align="center">
+  <img src="./assets/banner.svg" alt="Claude Code Skills Collection" width="100%">
+</p>
 
-Claude Code를 위한 프로젝트 자동화 스킬 모음입니다. 각 스킬은 특정 워크플로우나 작업을 자동화하여 개발 생산성을 향상시킵니다.
+<p align="center">
+  <a href="#-빠른-시작-quick-start"><img src="https://img.shields.io/badge/Quick_Start-d97757?style=for-the-badge" alt="Quick Start"></a>
+  <a href="#-스킬-요약"><img src="https://img.shields.io/badge/30+_Skills-6a9bcc?style=for-the-badge" alt="30+ Skills"></a>
+  <a href="https://github.com/tygwan/my-skills"><img src="https://img.shields.io/badge/Open_Source-788c5d?style=for-the-badge" alt="Open Source"></a>
+</p>
+
+<p align="center">
+  <strong>Claude Code를 위한 프로젝트 자동화 스킬 모음</strong><br>
+  각 스킬은 특정 워크플로우나 작업을 자동화하여 개발 생산성을 향상시킵니다.
+</p>
 
 ---
 

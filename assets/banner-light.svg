@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
+  <defs>
+    <!-- 소프트 그림자 -->
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#141413" flood-opacity="0.1"/>
+    </filter>
+
+    <!-- 패턴 배경 -->
+    <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#b0aea5" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- 배경 -->
+  <rect width="1200" height="400" fill="#faf9f5"/>
+  <rect width="1200" height="400" fill="url(#dots)"/>
+
+  <!-- 상단 악센트 라인 -->
+  <rect x="0" y="0" width="1200" height="4" fill="#d97757"/>
+
+  <!-- 장식 요소 -->
+  <circle cx="-50" cy="200" r="200" fill="#d97757" opacity="0.05"/>
+  <circle cx="1250" cy="200" r="250" fill="#6a9bcc" opacity="0.05"/>
+
+  <!-- Claude 로고 심볼 -->
+  <g transform="translate(100, 140)">
+    <rect x="0" y="0" width="120" height="120" rx="24" fill="#141413" filter="url(#softShadow)"/>
+    <text x="60" y="85" font-family="system-ui, -apple-system, sans-serif" font-size="60" font-weight="700" fill="#faf9f5" text-anchor="middle">C</text>
+  </g>
+
+  <!-- 메인 타이틀 -->
+  <text x="260" y="180" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="56" font-weight="700" fill="#141413">
+    Claude Code Skills
+  </text>
+
+  <!-- 태그라인 -->
+  <text x="260" y="230" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="24" fill="#666">
+    프로젝트 자동화 스킬 모음 for Claude Code
+  </text>
+
+  <!-- 하단 통계 뱃지들 -->
+  <g transform="translate(260, 280)">
+    <!-- Skills 뱃지 -->
+    <rect x="0" y="0" width="120" height="40" rx="20" fill="#d97757"/>
+    <text x="60" y="27" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#faf9f5" text-anchor="middle">30+ Skills</text>
+
+    <!-- Categories 뱃지 -->
+    <rect x="135" y="0" width="140" height="40" rx="20" fill="#6a9bcc"/>
+    <text x="205" y="27" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#faf9f5" text-anchor="middle">8 Categories</text>
+
+    <!-- Open Source 뱃지 -->
+    <rect x="290" y="0" width="145" height="40" rx="20" fill="#788c5d"/>
+    <text x="362" y="27" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#faf9f5" text-anchor="middle">Open Source</text>
+  </g>
+
+  <!-- 우측 장식 카드 -->
+  <g transform="translate(900, 100)">
+    <rect x="0" y="0" width="200" height="200" rx="16" fill="#fff" filter="url(#softShadow)"/>
+    <rect x="0" y="0" width="200" height="200" rx="16" fill="none" stroke="#e8e6dc" stroke-width="1"/>
+
+    <!-- 아이콘 그리드 -->
+    <g transform="translate(30, 30)">
+      <rect width="60" height="60" rx="12" fill="#d97757" opacity="0.1"/>
+      <text x="30" y="42" font-family="monospace" font-size="24" fill="#d97757" text-anchor="middle">&lt;/&gt;</text>
+    </g>
+    <g transform="translate(110, 30)">
+      <rect width="60" height="60" rx="12" fill="#6a9bcc" opacity="0.1"/>
+      <text x="30" y="40" font-size="24" text-anchor="middle">⚡</text>
+    </g>
+    <g transform="translate(30, 110)">
+      <rect width="60" height="60" rx="12" fill="#788c5d" opacity="0.1"/>
+      <text x="30" y="40" font-size="24" text-anchor="middle">🧪</text>
+    </g>
+    <g transform="translate(110, 110)">
+      <rect width="60" height="60" rx="12" fill="#141413" opacity="0.05"/>
+      <text x="30" y="40" font-size="24" text-anchor="middle">🤖</text>
+    </g>
+  </g>
+
+  <!-- 하단 바 -->
+  <rect x="0" y="396" width="1200" height="4" fill="#e8e6dc"/>
+</svg>
