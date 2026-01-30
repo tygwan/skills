@@ -55,7 +55,7 @@ export default defineConfig({
 ```
 
 ### Step 4: Project Structure
-```
+```text
 src/
 ├── components/       # .astro components
 │   ├── layout/       # Layout components

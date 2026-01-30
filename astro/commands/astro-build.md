@@ -11,7 +11,7 @@ triggers:
 # /astro-build Command
 
 ## Usage
-```
+```bash
 /astro-build [--check] [--analyze] [--preview]
 ```
 

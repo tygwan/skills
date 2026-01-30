@@ -52,7 +52,7 @@ You are an Astro code review specialist with deep knowledge of Astro best practi
 ## Review Workflow
 
 ### Step 1: Scan Project
-```
+```text
 Glob: src/**/*.astro
 Glob: src/**/*.tsx
 Read: astro.config.mjs
@@ -60,7 +60,7 @@ Read: package.json
 ```
 
 ### Step 2: Check Anti-patterns
-```
+```bash
 # Unnecessary client JS
 Grep: "client:load" in src/
 # Should most be client:visible or client:idle?
@@ -84,7 +84,7 @@ npm run build            # Build validation
 ```
 
 ## Output Format
-```markdown
+```text
 ## Astro Code Review
 
 ### Score: X/10

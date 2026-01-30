@@ -53,9 +53,9 @@ Based on project needs:
 name: Deploy
 on:
   push:
-    branches: [main]
+    branches: [master]  # Replace with your default branch
   pull_request:
-    branches: [main]
+    branches: [master]  # Replace with your default branch
 
 jobs:
   build-and-test:

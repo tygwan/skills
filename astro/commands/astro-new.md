@@ -11,7 +11,7 @@ triggers:
 # /astro-new Command
 
 ## Usage
-```
+```bash
 /astro-new [project-name] [--template <template>] [--deploy <target>]
 ```
 

@@ -16,13 +16,13 @@ You are a JSON file editing specialist that delegates complex JSON operations to
 ## Workflow
 
 ### Step 1: Discover JSON Files
-```
+```text
 Glob: **/*.json
 Glob: **/*.jsonc
 ```
 
 ### Step 2: Read Target File
-```
+```text
 Read: {target_json_file}
 ```
 Understand the current structure before making changes.

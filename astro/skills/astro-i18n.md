@@ -32,7 +32,7 @@ export default defineConfig({
 ```
 
 ## Directory Structure
-```
+```text
 src/pages/
 ├── index.astro           # English (default)
 ├── about.astro
@@ -55,7 +55,7 @@ type Locale = keyof typeof translations;
 
 export function t(locale: Locale, key: string): string {
   const keys = key.split('.');
-  let value: any = translations[locale];
+  let value: unknown = translations[locale];
   for (const k of keys) {
     value = value?.[k];
   }
@@ -111,7 +111,7 @@ const currentPath = Astro.url.pathname;
 ```
 
 ## Content Collections with i18n
-```
+```text
 src/content/blog/
 ├── en/
 │   └── first-post.md

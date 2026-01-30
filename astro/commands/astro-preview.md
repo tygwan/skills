@@ -11,7 +11,7 @@ triggers:
 # /astro-preview Command
 
 ## Usage
-```
+```bash
 /astro-preview [--dev | --build-preview] [--port <port>] [--host]
 ```
 

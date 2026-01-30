@@ -31,7 +31,7 @@ You are an expert Astro framework architect specializing in static site generati
 ## Analysis Workflow
 
 ### Step 1: Assess Current State
-```
+```text
 Read: astro.config.mjs
 Read: package.json
 Read: tsconfig.json
@@ -49,7 +49,7 @@ Glob: src/content/**/*
 ### Step 3: Recommend Improvements
 Output a structured recommendation:
 
-```markdown
+```text
 ## Architecture Review
 
 ### Current State

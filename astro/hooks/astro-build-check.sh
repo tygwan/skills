@@ -31,17 +31,21 @@ case "$TOOL_NAME" in
         exit 1
       fi
 
-      # Run astro check for type validation
-      cd "$ASTRO_ROOT"
-      if command -v npx &> /dev/null; then
-        echo "[astro-build-check] Running astro check..."
-        npx astro check 2>&1
-        CHECK_EXIT=$?
-        if [ $CHECK_EXIT -ne 0 ]; then
-          echo "[astro-build-check] FAILED: astro check found errors. Fix before building."
-          exit 1
+      # Run astro check for type validation (guarded cd)
+      if cd "$ASTRO_ROOT"; then
+        if command -v npx &> /dev/null; then
+          echo "[astro-build-check] Running astro check..."
+          npx astro check 2>&1
+          CHECK_EXIT=$?
+          if [ $CHECK_EXIT -ne 0 ]; then
+            echo "[astro-build-check] FAILED: astro check found errors. Fix before building."
+            exit 1
+          fi
+          echo "[astro-build-check] PASSED: No type errors found."
         fi
-        echo "[astro-build-check] PASSED: No type errors found."
+      else
+        echo "[astro-build-check] ERROR: Could not change to $ASTRO_ROOT"
+        exit 1
       fi
     fi
     ;;

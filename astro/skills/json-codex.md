@@ -31,7 +31,7 @@ Delegates JSON file operations (create, modify, validate, merge) to Codex CLI fo
 ## Execution Flow
 
 ### Step 1: Identify Target Files
-```
+```text
 Glob: **/*.json
 Glob: **/*.jsonc
 ```
