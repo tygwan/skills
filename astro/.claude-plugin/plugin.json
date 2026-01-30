@@ -25,13 +25,15 @@
       "skills/astro-component.md",
       "skills/astro-deploy.md",
       "skills/astro-i18n.md",
-      "skills/astro-content.md"
+      "skills/astro-content.md",
+      "skills/json-codex.md"
     ],
     "agents": [
       "agents/astro-architect.md",
       "agents/astro-frontend.md",
       "agents/astro-devops.md",
-      "agents/astro-reviewer.md"
+      "agents/astro-reviewer.md",
+      "agents/json-codex-editor.md"
     ],
     "hooks": [
       "hooks/astro-build-check.sh",
@@ -45,6 +47,6 @@
   },
   "dependencies": {
     "runtime": ["node >= 18", "npm >= 9"],
-    "optional_skills": ["frontend-design", "react-expert", "d3js-skill"]
+    "optional_skills": ["frontend-design", "react-expert", "d3js-skill", "codex"]
   }
 }
