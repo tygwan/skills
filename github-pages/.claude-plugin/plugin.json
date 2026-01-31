@@ -1,0 +1,46 @@
+{
+    "name": "github-pages",
+    "version": "1.0.0",
+    "description": "GitHub Pages deployment rules, diagnostics, and automation - prevent legacy/workflow conflicts and ensure correct site version is served",
+    "author": {
+        "name": "Tygwan",
+        "url": "https://github.com/tygwan"
+    },
+    "homepage": "https://github.com/tygwan/skills/tree/master/github-pages",
+    "keywords": [
+        "github-pages",
+        "deployment",
+        "gh-pages",
+        "github-actions",
+        "github.io",
+        "static-site",
+        "deploy-conflict",
+        "ci-cd"
+    ],
+    "components": {
+        "skills": [
+            "skill.md",
+            "skills/gh-pages-diagnose.md",
+            "skills/gh-pages-setup.md",
+            "skills/gh-pages-verify.md"
+        ],
+        "agents": [
+            "agents/deploy-doctor.md"
+        ],
+        "hooks": [
+            "hooks/post-deploy-check.sh"
+        ]
+    },
+    "dependencies": {
+        "runtime": [
+            "gh (GitHub CLI) >= 2.0",
+            "curl",
+            "jq"
+        ],
+        "optional_skills": [
+            "astro",
+            "git-workflow",
+            "ci-workflow"
+        ]
+    }
+}

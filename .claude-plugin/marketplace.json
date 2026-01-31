@@ -1,7 +1,7 @@
 {
   "name": "tygwan-skills",
   "displayName": "Tygwan's Skills Marketplace",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "owner": {
     "name": "Tygwan",
     "url": "https://github.com/tygwan"
@@ -336,6 +336,14 @@
       "version": "1.0.0",
       "category": "Documentation",
       "keywords": ["context", "dev-docs", "atomic", "task", "tracking", "intent", "git"]
+    },
+    {
+      "name": "github-pages",
+      "source": "./github-pages",
+      "description": "GitHub Pages deployment rules, diagnostics, and automation - prevent legacy/workflow conflicts and ensure correct site version is served",
+      "version": "1.0.0",
+      "category": "Deployment & Infrastructure",
+      "keywords": ["github-pages", "deployment", "gh-pages", "github-actions", "github.io", "deploy-conflict"]
     }
   ]
 }
