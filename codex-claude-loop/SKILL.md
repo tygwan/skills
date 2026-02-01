@@ -18,9 +18,17 @@ This skill implements a balanced engineering loop:
 3. Document assumptions and potential issues
 4. Output the plan in a structured format
 
+## Available Models
+
+| Model | Description | Use Case |
+|-------|-------------|----------|
+| `gpt-5.2-codex` | Latest agentic coding model (default) | Plan validation, code review |
+| `gpt-5.1-codex-mini` | Lightweight cost-efficient model | Quick validation, simple reviews |
+| `gpt-5.1-codex-max` | Extended agentic coding model | Large-scale architecture reviews |
+
 ## Phase 2: Plan Validation with Codex
-1. Ask user (via `AskUserQuestion`): 
-   - Model: `gpt-5` or `gpt-5-codex`
+1. Ask user (via `AskUserQuestion`):
+   - Model: `gpt-5.2-codex` (Recommended), `gpt-5.1-codex-mini`, or `gpt-5.1-codex-max`
    - Reasoning effort: `low`, `medium`, or `high`
 2. Send the plan to Codex for validation:
 ```bash

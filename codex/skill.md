@@ -5,8 +5,16 @@ description: Use when the user asks to run Codex CLI (codex exec, codex resume) 
 
 # Codex Skill Guide
 
+## Available Models
+
+| Model | Description | Use Case |
+|-------|-------------|----------|
+| `gpt-5.2-codex` | Latest agentic coding model (default) | General coding, refactoring, analysis |
+| `gpt-5.1-codex-mini` | Lightweight cost-efficient model | Quick reviews, simple tasks |
+| `gpt-5.1-codex-max` | Extended agentic coding model | Large-scale refactoring, long-running tasks |
+
 ## Running a Task
-1. Ask the user (via `AskUserQuestion`) which model to run: `gpt-5` or `gpt-5-codex`.
+1. Ask the user (via `AskUserQuestion`) which model to run: `gpt-5.2-codex` (Recommended), `gpt-5.1-codex-mini`, or `gpt-5.1-codex-max`.
 2. Ask the user (via `AskUserQuestion`) which reasoning effort to use: `low`, `medium`, or `high`.
 3. Select the sandbox mode required for the task; default to `--sandbox read-only` unless edits or network access are necessary.
 4. Assemble the command with the appropriate options:
